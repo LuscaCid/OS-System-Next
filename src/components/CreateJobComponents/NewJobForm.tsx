@@ -27,7 +27,7 @@ export function NewJobForm() {
     })
     return(
         <section className=' absolute inset-0 top-14  m-2'>
-            <form className='h-full border border-zinc-300 rounded-md w-full py-4 px-2 shadow-lg flex flex-col gap-2'>
+            <form className='h-full border border-zinc-300 rounded-md w-full py-4 px-2 shadow-lg flex flex-col gap-2 overflow-y-auto'>
                 <h1 className='text-xl text-zinc-800 font-bold mb-4 flex justify-between items-center'>Type some info to create a new Job <NotebookPen size={30} /></h1>
 
                 <Input 
@@ -52,7 +52,7 @@ export function NewJobForm() {
                     error_message='Type an title!'
                     icon={CaseSensitive}
                 />
-                <section className='flex flex-col gap-2'>
+                <section className='flex flex-col gap-2 '>
                     <button type='button' className=' items-center flex  w-full bg-transparent p-3 border border-zinc-300 rounded-md'>
                         <Search strokeWidth={1.25} size={24}/> Select an Client 
                     </button>
