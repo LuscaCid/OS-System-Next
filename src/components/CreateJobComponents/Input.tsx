@@ -22,7 +22,7 @@ export function Input ({input_type,error_message,icon : Icon ,placeholder, requi
                     {...rest}
                 />
             </div>
-            <span className="text-sm text-red-500 font-bold">{error_message}</span>
+            <span className="invisible text-sm text-red-500 font-bold">{error_message}</span>
         </section>
          
     )
