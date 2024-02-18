@@ -28,7 +28,7 @@ export function NewJobForm() {
     return(
         <section className=' absolute inset-0 top-14  m-2'>
             <form className='h-full border border-zinc-300 rounded-md w-full py-4 px-2 shadow-lg flex flex-col gap-1 overflow-y-auto'>
-                <h1 className='border border-zinc-300 w-full pb-1 text-xl text-zinc-800 font-bold mb-4 flex justify-between items-center'>Type some info to create a new Job <NotebookPen size={36} /></h1>
+                <h1 className='border-b border-zinc-300 w-full pb-1 text-xl text-zinc-800 font-bold mb-4 flex justify-between items-center'>Type some info to create a new Job <NotebookPen size={36} /></h1>
 
                 <Input 
                     input_type='text'
