@@ -3,7 +3,7 @@ import * as z from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 import { Input } from './Input'
-import { CaseSensitive, NotebookPen } from 'lucide-react'
+import { CaseSensitive, NotebookPen, Search, X } from 'lucide-react'
 
 const FormCreationOSSchema = z.object({
     title : z.string().min(3),
@@ -36,21 +36,35 @@ export function NewJobForm() {
                     required_input
                     error_message='Type an title!'
                     icon={CaseSensitive}
+
                 />
                 <Input 
                     input_type='text'
-                    placeholder='Title'
+                    placeholder='Gadget'
                     required_input
                     error_message='Type an title!'
                     icon={CaseSensitive}
                 />
                 <Input 
                     input_type='text'
-                    placeholder='Title'
+                    placeholder='Price'
                     required_input
                     error_message='Type an title!'
                     icon={CaseSensitive}
                 />
+                <section className='flex flex-col gap-2'>
+                    <button type='button' className=' items-center flex  w-full bg-transparent p-3 border border-zinc-300 rounded-md'>
+                        <Search strokeWidth={1.25} size={24}/> Select an Client 
+                    </button>
+                    <span className='p-3 border flex items-center justify-between border-zinc-300 rounded-md hover:bg-zinc-200 transition duration-200 '>
+                        Werlay dos Santos
+                        <X 
+                            className='text-red-500 cursor-pointer' 
+                            size={24} 
+                        />
+                    </span>
+                </section>
+                
             </form>
         </section>
     )

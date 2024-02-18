@@ -1,4 +1,3 @@
-import { Plus } from "lucide-react";
 
 import { HistorySection } from "./historyComponents/HistorySection";
 import { CreateJobSection } from "./CreateJobComponents/CreateJobSection";

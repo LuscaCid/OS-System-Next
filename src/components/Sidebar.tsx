@@ -1,7 +1,6 @@
 
 import { ChevronsUpDown, User, Home as HomeIcon, UsersRound, Settings2 } from "lucide-react";
 import { LiLink } from "./SidebarComponents/LiLink";
-import Home from "@/app/page";
 
 export function Sidebar () {
     return (
