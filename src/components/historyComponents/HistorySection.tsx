@@ -19,13 +19,12 @@ const serviceOrderObject : ServiceOrderDetails= {
 
 export function HistorySection () {
 
-    const {arrived_at,costumer_name,description,tag,title,} = serviceOrderObject
+    const {arrived_at,costumer_name,description,tag,title} = serviceOrderObject
 
     return(
         <div className="h-full col-span-1 md:col-span-4/5 w-full  border-r border-zinc-300 dark:border-zinc-800 relative">
                 <h1 className="mb-2 flex items-center gap-2 p-2 text-3xl font-bold border-b border-zinc-300 dark:border-zinc-800 w-full">
                     <div className="border border-zinc-300 dark:border-zinc-800 rounded-md">
-
                     <History size={24} />
                     </div>
                     History

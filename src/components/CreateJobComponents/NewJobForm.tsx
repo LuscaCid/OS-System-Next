@@ -3,7 +3,8 @@ import * as z from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { FormProvider, useForm } from 'react-hook-form'
 import { Input } from './Input'
-import { CaseSensitive, Coins, NotebookPen, PenLine, Search, Smartphone, X } from 'lucide-react'
+import { CaseSensitive, Coins, NotebookPen, PenLine, Smartphone, X } from 'lucide-react'
+import { PenBox } from 'lucide-react'
 import { SearchClientButton } from './SearchClientButton'
 
 const FormCreationOSSchema = z.object({
@@ -32,7 +33,7 @@ export function NewJobForm() {
                     
                     <div className='h-full w-full py-4 px-2 flex flex-col gap-2 overflow-y-auto'>
                         
-                        <h1 className='border-b dark:text-zinc-300 dark:border-zinc-800 border-zinc-300 w-full pb-1 text-xl text-zinc-800 font-bold mb-4 flex justify-between items-center'>Type some info to create a new Job <NotebookPen size={36} /></h1>
+                        <h1 className='border-b dark:text-zinc-300 dark:border-zinc-800 border-zinc-300 w-full pb-1 text-xl text-zinc-800 font-bold mb-4 flex justify-between items-center'>Type some info to create a new Job <PenBox size={32} /></h1>
 
                         <Input 
                             input_type='text'
