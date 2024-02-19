@@ -29,11 +29,11 @@ export function NewJobForm() {
         <section className=' absolute inset-0 top-14 m-2'>
             <FormProvider {...newJobForm}>
                 
-                <form className='h-full border dark:border-zinc-800 border-zinc-300 rounded-md w-full py-4 px-2 shadow-lg flex flex-col gap-2'>
+                <form className='h-full border dark:border-zinc-800 border-zinc-300 rounded-md w-full py-2 px-2 shadow-lg flex flex-col gap-2'>
                     
-                    <div className='h-full w-full py-4 px-2 flex flex-col gap-2 overflow-y-auto'>
+                    <div className='h-full w-full  flex flex-col gap-2 overflow-y-auto'>
                         
-                        <h1 className='border-b dark:text-zinc-300 dark:border-zinc-800 border-zinc-300 w-full pb-1 text-xl text-zinc-800 font-bold mb-4 flex justify-between items-center'>Type some info to create a new Job <PenBox size={32} /></h1>
+                        <h1 className='border-b dark:text-zinc-300 dark:border-zinc-800 border-zinc-300 w-full pb-1 text-xl text-zinc-800 font-bold mb-2 flex justify-between items-center'>Type some info to create a new Job <PenBox size={32} /></h1>
 
                         <Input 
                             input_type='text'
@@ -61,7 +61,7 @@ export function NewJobForm() {
                             input_name='price'
                         />
                         <textarea 
-                            className='p-4 resize-none bg-transparent border dark:border-zinc-800 border-zinc-300 rounded-md shadow-md h-40 min-h-28'
+                            className='p-2 resize-none bg-transparent border dark:border-zinc-800 border-zinc-300 rounded-md shadow-md min-h-20'
                             name="description" 
                             placeholder='Set the description relating devices problems...'
                         />
@@ -69,7 +69,7 @@ export function NewJobForm() {
                         <SearchClientButton />
                     </div>   
                     <button 
-                        className='flex items-center justify-center bg-transparent text-zinc-950 dark:text-zinc-300 rounded-md p-2 hover:bg-zinc-950  dark:hover:bg-zinc-800/90 transition duration-200 border dark:border-zinc-800 border-zinc-300 hover:text-zinc-100 shadow-lg'
+                        className='flex items-center justify-center bg-transparent text-zinc-950 dark:text-zinc-300 rounded-md p-1 hover:bg-zinc-200  dark:hover:bg-zinc-800/90 transition duration-200 border dark:border-zinc-800 border-zinc-300  shadow-lg'
                         type='submit'>
                         <PenLine size={30} /> Generate
                     </button>      
