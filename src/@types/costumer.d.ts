@@ -13,3 +13,6 @@ export interface CostumerData {
     email? : string
 
 }
+
+
+export type InputNames = "title" | "problemDescription" | "price" | 'gadget'
