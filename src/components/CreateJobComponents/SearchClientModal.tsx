@@ -1,10 +1,13 @@
 import * as Dialog from '@radix-ui/react-dialog'
 import { X } from 'lucide-react'
+import { z } from 'zod'
+import { useForm } from 'react-hook-form'
 interface InputSearchModalProps {
     input_name : string
     input_id : string 
     input_placeholder : string
 }
+
 function InputSearchModal({input_id,input_name,input_placeholder} : InputSearchModalProps) {
     return (
         <fieldset>
@@ -14,7 +17,7 @@ function InputSearchModal({input_id,input_name,input_placeholder} : InputSearchM
                 {input_name}
             </label>
             <input 
-                className='py-1 px-2 w-full bg-transparent border border-zinc-300 rounded-md'
+                className='py-1 px-2 w-full bg-transparent border border-zinc-300 rounded-md dark:border-zinc-800/80 dark:text-zinc-950 '
                 type="text" 
                 placeholder={input_placeholder}
                 name={input_name}
@@ -27,11 +30,11 @@ function InputSearchModal({input_id,input_name,input_placeholder} : InputSearchM
 
 function ModalContent () { 
     return (
-        <Dialog.Content className='border border-zinc-300 min-w-72 w-full max-w-96 rounded-md p-2 fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-zinc-100'>
+        <Dialog.Content className=' dark:bg-zinc-950 border dark:border-zinc-800/80  border-zinc-300 min-w-72 w-full max-w-96 rounded-md p-2 fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-zinc-100'>
             <Dialog.Close className='absolute top-2 right-2 bg-transparent cursor-pointer text-red-500 hover:text-red-600 transition duration-200'>
                 <X size={24}/> 
             </Dialog.Close>
-            <Dialog.Title className='text-3xl font-bold text-zinc-900 mb-4'>
+            <Dialog.Title className='text-3xl font-bold dark:text-zinc-300 text-zinc-900 mb-4'>
                 Search
             </Dialog.Title>
             <form className=' flex-col  flex gap-2'>
@@ -52,6 +55,12 @@ function ModalContent () {
             />
 
             </form>
+            <h1 className='text-lg font-bold dark:text-zinc-300 text-zinc-900 my-4'>
+                Users section
+            </h1>
+            <section>
+                
+            </section>
         </Dialog.Content>
     )
 }
