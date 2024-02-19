@@ -24,7 +24,7 @@ export function Input({input_type,error_message,icon : Icon ,placeholder, requir
     }, [watchedInput])
     return (
         <section className="flex flex-col gap-1">
-            <div className="w-full relative flex items-center gap-2 border border-zinc-300 rounded-md shadow-sm ">
+            <div className="w-full relative flex items-center gap-2 border dark:border-zinc-800 border-zinc-300 rounded-md shadow-sm ">
                 {Icon && <Icon size={26} className="absolute left-1"/>}
                 <label className="sr-only" htmlFor={input_name}>{input_name}</label>
                 <input 
