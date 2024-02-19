@@ -3,7 +3,7 @@ import * as z from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { FormProvider, useForm } from 'react-hook-form'
 import { Input } from './Input'
-import { CaseSensitive, Coins, NotebookPen, Search, Smartphone, X } from 'lucide-react'
+import { CaseSensitive, Coins, NotebookPen, PenLine, Search, Smartphone, X } from 'lucide-react'
 import { SearchClientButton } from './SearchClientButton'
 
 const FormCreationOSSchema = z.object({
@@ -27,44 +27,54 @@ export function NewJobForm() {
     return(
         <section className=' absolute inset-0 top-14  m-2'>
             <FormProvider {...newJobForm}>
-                <form className='h-full border border-zinc-300 rounded-md w-full py-4 px-2 shadow-lg flex flex-col gap-2 overflow-y-auto'>
-                <h1 className='border-b border-zinc-300 w-full pb-1 text-xl text-zinc-800 font-bold mb-4 flex justify-between items-center'>Type some info to create a new Job <NotebookPen size={36} /></h1>
-
-                <Input 
-                    input_type='text'
-                    placeholder='Title'
-                    required_input
-                    error_message='Type an title!'
-                    icon={CaseSensitive}
-                    
-                    input_name='title'
-                />
-                <Input 
-                    input_type='text'
-                    placeholder='Gadget'
-                    required_input
-                    error_message='Type an name of gadget.'
-                    icon={Smartphone}
-                    input_name='gadget'
-                />
-                <Input 
-                    input_type='number'
-                    placeholder='Price'
-                    required_input
-                    error_message='Type an Price!'
-                    icon={Coins}
-                    
-                    input_name='price'
-                />
-                <textarea 
-                    className='p-4 resize-none bg-transparent border border-zinc-300 rounded-md shadow-md h-40'
-                    name="description" 
-                    placeholder='Set the description relating devices problems...'
-                />
-
-                <SearchClientButton />
                 
-            </form>
+                <form className='h-full border border-zinc-300 rounded-md w-full py-4 px-2 shadow-lg flex flex-col gap-2'>
+                    
+                    <div className='h-full w-full py-4 px-2 flex flex-col gap-2 overflow-y-auto'>
+                        
+                        <h1 className='border-b border-zinc-300 w-full pb-1 text-xl text-zinc-800 font-bold mb-4 flex justify-between items-center'>Type some info to create a new Job <NotebookPen size={36} /></h1>
+
+                        <Input 
+                            input_type='text'
+                            placeholder='Title'
+                            required_input
+                            error_message='Type an title!'
+                            icon={CaseSensitive}
+                            
+                            input_name='title'
+                        />
+                        <Input 
+                            input_type='text'
+                            placeholder='Gadget'
+                            required_input
+                            error_message='Type an name of gadget.'
+                            icon={Smartphone}
+                            input_name='gadget'
+                        />
+                        <Input 
+                            input_type='number'
+                            placeholder='Price'
+                            required_input
+                            error_message='Type an Price!'
+                            icon={Coins}
+                            
+                            input_name='price'
+                        />
+                        <textarea 
+                            className='p-4 resize-none bg-transparent border border-zinc-300 rounded-md shadow-md h-40'
+                            name="description" 
+                            placeholder='Set the description relating devices problems...'
+                        />
+
+                        <SearchClientButton />
+                    </div>   
+                    <button 
+                        className='flex items-center justify-center bg-zinc-950 text-zinc-200 rounded-md p-2 hover:bg-transparent transition duration-200 border border-zinc-300 hover:text-zinc-950'
+                        type='submit'>
+                        <PenLine size={30} /> Generate
+                    </button>      
+                </form>
+                               
             </FormProvider>
             
         </section>
