@@ -61,7 +61,7 @@ export function NewJobForm() {
                             input_name='price'
                         />
                         <textarea 
-                            className='p-4 resize-none bg-transparent border border-zinc-300 rounded-md shadow-md h-40'
+                            className='p-4 resize-none bg-transparent border border-zinc-300 rounded-md shadow-md h-40 min-h-28'
                             name="description" 
                             placeholder='Set the description relating devices problems...'
                         />
