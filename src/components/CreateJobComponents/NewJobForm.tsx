@@ -3,7 +3,7 @@ import * as z from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { FormProvider, useForm } from 'react-hook-form'
 import { Input } from './Input'
-import { CaseSensitive, Coins, NotebookPen, PenLine, Smartphone, X } from 'lucide-react'
+import { CaseSensitive, Coins, PenLine, Smartphone } from 'lucide-react'
 import { PenBox } from 'lucide-react'
 import { SearchClientButton } from './SearchClientButton'
 
