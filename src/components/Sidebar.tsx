@@ -1,8 +1,6 @@
 'use client'
 import { ChevronsUpDown, User, Home as HomeIcon, UsersRound, Settings2 } from "lucide-react";
 import { LiLink } from "./SidebarComponents/LiLink";
-import { ThemeTriggerButton } from "./SidebarComponents/ThemeTrigger";
-import * as  Dialog from "@radix-ui/react-dialog";
 import { ChangeTheme } from "./SidebarComponents/ThemeMode";
 
 export function Sidebar () {
