@@ -8,7 +8,7 @@ interface Props {
 }
 export function LiLink({source, title, icon : Icon} : Props) {
     return (
-        <li className="p-1 w-full hover:bg-zinc-200 dark:hover:bg-zinc-800/80 transition duration-200 cursor-pointer rounded-sm">
+        <li className=" text-sm font-bold p-1 w-full hover:bg-zinc-200 dark:hover:bg-zinc-800/80 transition duration-200 cursor-pointer rounded-sm">
             <Link className="flex gap-1 items-center" href={source}>
                 {Icon && <Icon size={20}/>}
                 {title}
