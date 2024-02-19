@@ -31,7 +31,7 @@ export function NewJobForm() {
                 
                 <form className='h-full border dark:border-zinc-800 border-zinc-300 rounded-md w-full py-2 px-2 shadow-lg flex flex-col gap-2'>
                     
-                    <div className='h-full w-full  flex flex-col gap-2 overflow-y-auto'>
+                    <div className='h-full w-full  flex flex-col gap-2 overflow-y-auto px-2'>
                         
                         <h1 className='border-b dark:text-zinc-300 dark:border-zinc-800 border-zinc-300 w-full pb-1 text-xl text-zinc-800 font-bold mb-2 flex justify-between items-center'>Type some info to create a new Job <PenBox size={32} /></h1>
 
