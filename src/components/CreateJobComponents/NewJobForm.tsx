@@ -4,8 +4,6 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { FormProvider, useForm } from 'react-hook-form'
 import { Input } from './Input'
 import { CaseSensitive, Coins, NotebookPen, Search, Smartphone, X } from 'lucide-react'
-import { useEffect } from 'react'
-import { InputNames } from '@/@types/costumer'
 import { SearchClientButton } from './SearchClientButton'
 
 const FormCreationOSSchema = z.object({
@@ -58,6 +56,12 @@ export function NewJobForm() {
                     
                     input_name='price'
                 />
+                <textarea 
+                    className='p-4 resize-none bg-transparent border border-zinc-300 rounded-md shadow-md h-40'
+                    name="description" 
+                    placeholder='Set the description relating devices problems...'
+                />
+
                 <SearchClientButton />
                 
             </form>
