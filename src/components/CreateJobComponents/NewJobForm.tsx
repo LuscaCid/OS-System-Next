@@ -69,7 +69,7 @@ export function NewJobForm() {
                         <SearchClientButton />
                     </div>   
                     <button 
-                        className='flex items-center justify-center bg-zinc-950 text-zinc-200 rounded-md p-2 hover:bg-transparent transition duration-200 border border-zinc-300 hover:text-zinc-950'
+                        className='flex items-center justify-center bg-transparent text-zinc-950 rounded-md p-2 hover:bg-zinc-950 transition duration-200 border border-zinc-300 hover:text-zinc-100 shadow-lg'
                         type='submit'>
                         <PenLine size={30} /> Generate
                     </button>      
