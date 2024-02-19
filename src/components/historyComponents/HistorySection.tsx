@@ -29,7 +29,7 @@ export function HistorySection () {
                     </div>
                     History
                 </h1>
-                <section className=" border-t shadow-black shadow-inner border-b border-zinc-300 dark:border-zinc-800  rounded-md m-2 flex flex-col gap-2 overflow-y-auto absolute inset-0 top-14 bottom-4 pr-2">
+                <section className=" border-t border-b border-zinc-300 dark:border-zinc-800  rounded-md m-2 flex flex-col gap-2 overflow-y-auto absolute inset-0 top-14 bottom-4 pr-2">
                     <HistoryBox 
                         arrived_at={arrived_at}
                         costumer_name={costumer_name}
