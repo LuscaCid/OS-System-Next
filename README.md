@@ -20,3 +20,4 @@
 -ao criar ordem de serviço, ela deve estar conectada a um cliente
 -prazo mínimo para entrega do dispositivo é de 2 dias
 
+//clickar no nome do cliente no History abre o perfil dele
