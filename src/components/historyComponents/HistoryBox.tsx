@@ -6,7 +6,7 @@ interface Props {
    title : string
    description : string
    arrived_at : Date 
-   tag : "tela" | "bateria" | "conector"
+   tag : string
 }
 
 export function HistoryBox({costumer_name,description,arrived_at,title, tag} : Props){
