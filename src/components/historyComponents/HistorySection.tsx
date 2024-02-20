@@ -53,9 +53,8 @@ export async function HistorySection () {
                                         description={element.description}
                                         tag={element.tag}
                                         title={element.title}
-                                        
-                                    /> 
 
+                                    /> 
                                 </section>
                             )
                         })

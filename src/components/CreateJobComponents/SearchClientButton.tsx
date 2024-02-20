@@ -7,7 +7,7 @@ export function SearchClientButton () {
         <section className='flex flex-col gap-2 mt-4'>
             <Dialog.Root>
                 <Dialog.Trigger asChild>
-                    <button type='button' className=' items-center flex justify-between dark:text-zinc-300  w-full bg-transparent p-3 border dark:hover:bg-zinc-800/80 border-zinc-300 dark:border-zinc-800 rounded-md hover:bg-zinc-200/50 transition duration-200 cursor-text'>
+                    <button type='button' className='font-bold items-center flex justify-between dark:text-zinc-300  w-full bg-transparent p-3 border dark:hover:bg-zinc-800/80 border-zinc-300 dark:border-zinc-800 rounded-md hover:bg-zinc-200/50 transition duration-200 cursor-text'>
                         Select an Client <Search strokeWidth={1.25} size={20}/>
                     </button>
                 </Dialog.Trigger>    
