@@ -6,7 +6,7 @@ import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useEffect, useCallback, useState } from 'react'
 import { api } from '@/app/services/api'
-
+import {FormEvent } from 'react'
 
 const SearchClientFormSchema = z.object({
     cpf : z.string().optional(),
@@ -30,10 +30,11 @@ export function ModalContent () {
     let nameWatched = watch('client_name')
 
     
-    const handleSubmitForm = ({ client_name, cpf } : SearchClientFormSchemaType)=> {
+    const handleSubmitForm = (e : FormEvent) => {
+        e.preventDefault()
         async function fetch () {
-            if(client_name){
-                const data = await api.get('clients', {params : {name : client_name}})
+            if(nameWatched){
+                const data = await api.get('clients', {params : {name : nameWatched}})
                 console.log(data)
             } 
         }
@@ -66,7 +67,7 @@ export function ModalContent () {
                         />
                         <button 
                             type='submit'
-                            onSubmit={handleSubmit(handleSubmitForm)}
+                            onSubmit={handleSubmitForm}
                             className='rounded-md bg-transparent border border-zinc-300 dark:border-zinc-800/80 text-md p-1 font-bold hover:bg-zinc-300 transition duration-200 dark:hover:bg-zinc-800 '>
                             Search user
                         </button>
