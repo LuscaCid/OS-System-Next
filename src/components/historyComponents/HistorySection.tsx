@@ -1,21 +1,6 @@
 import { History } from "lucide-react";
 import { HistoryBox } from "./HistoryBox";
 
-interface ServiceOrderDetails {
-    costumer_name : string
-    title : string
-    description : string
-    arrived_at : Date 
-    tag : "tela" | "bateria" | "conector"
-}
-
-const serviceOrderObject : ServiceOrderDetails= { 
-    arrived_at : new Date('2024-02-12'),
-    costumer_name : "jeffinho",
-    description : "muitos cacos na tela, diversos problemas no aparelho, varias horas de trabalho",
-    tag : "tela",
-    title : "Xiaomi note 10"
-}
 interface HistoryComponentProps {
     client_id : number
     id : string
@@ -27,8 +12,6 @@ interface HistoryComponentProps {
 
 }
 export async function HistorySection () {
- 
-    const {arrived_at,costumer_name,description,tag,title} = serviceOrderObject
  
     const response = await fetch('http://localhost:3000/orders') 
     const data : HistoryComponentProps [] = await response.json()
