@@ -17,7 +17,7 @@ function InputSearchModal({input_id,input_name,input_placeholder} : InputSearchM
                 {input_name}
             </label>
             <input 
-                className='py-1 px-2 w-full bg-transparent border border-zinc-300 rounded-md dark:border-zinc-800/80 dark:text-zinc-950 '
+                className='py-1 px-2 w-full bg-transparent border border-zinc-300 rounded-md dark:border-zinc-800/80 dark:text-zinc-950 dark:text-zinc-300'
                 type="text" 
                 placeholder={input_placeholder}
                 name={input_name}
