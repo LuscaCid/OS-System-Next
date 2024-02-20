@@ -5,7 +5,7 @@
   "scripts": {
     "server" : "npx json-server -p 4000 server.json -w",
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && npm run server",
     "start": "next start",
     "lint": "next lint"
   },
