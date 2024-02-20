@@ -32,8 +32,7 @@ export async function HistorySection () {
  
     const response = await fetch('http://localhost:3000/orders') 
     const data : HistoryComponentProps [] = await response.json()
-    console.log(data)
-    console.log('ue mano, pq nao ta logando?')
+
     return(
         <div className="h-full col-span-1 md:col-span-4/5 w-full  border-r border-zinc-300 dark:border-zinc-800 relative">
                 <h1 className="mb-2 ml-3 flex items-center gap-2 p-2 text-3xl font-bold border-b border-zinc-300 dark:border-zinc-800 w-full">
