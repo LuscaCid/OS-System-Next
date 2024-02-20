@@ -1,6 +1,6 @@
 import { Search, X } from "lucide-react";
 import * as Dialog from '@radix-ui/react-dialog'
-import { SearchClientModal } from "./SearchClientModal";
+import { ModalContent } from "./SearchClientModal";
 
 export function SearchClientButton () {
     return (
@@ -11,7 +11,7 @@ export function SearchClientButton () {
                         Select an Client <Search strokeWidth={1.25} size={20}/>
                     </button>
                 </Dialog.Trigger>    
-            <SearchClientModal />
+                <ModalContent />
             </Dialog.Root>
             <span className='p-3 border flex items-center justify-between dark:border-zinc-800 border-zinc-300 rounded-md dark:hover:bg-zinc-800/80 hover:bg-zinc-200 transition duration-200 '>
                 Werlay dos Santos

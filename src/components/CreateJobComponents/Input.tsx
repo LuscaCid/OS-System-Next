@@ -1,5 +1,5 @@
 import { LucideIcon } from "lucide-react"
-import { useFormContext } from "react-hook-form"
+
 import { InputNames } from "@/@types/costumer"
 import { useEffect } from "react"
 
@@ -9,19 +9,11 @@ interface InputProps {
     error_message : string
     input_type : string
     required_input : boolean
-
     input_name : InputNames
 }
 
 export function Input({input_type,error_message,icon : Icon ,placeholder, required_input, input_name} : InputProps ) {
-    
-    const {register, watch} = useFormContext()
-
-    const watchedInput = watch(input_name)
-
-    useEffect(() => {
-        console.log(watchedInput)
-    }, [watchedInput])
+   
     return (
         <section className="flex flex-col gap-1">
             <div className="w-full relative flex items-center gap-2 border dark:border-zinc-800 border-zinc-300 rounded-md shadow-sm ">
@@ -33,7 +25,7 @@ export function Input({input_type,error_message,icon : Icon ,placeholder, requir
                     type={input_type} 
                     placeholder={placeholder}
                     required = {required_input}
-                    {...register(input_name)}
+                    
                 />
             </div>
             <span className=" invisible absolute text-sm text-red-500 font-bold">{error_message}</span>

@@ -20,8 +20,7 @@ export function NewJobForm() {
     const newJobForm = useForm<FormType>({
         resolver : zodResolver(FormCreationOSSchema),
         defaultValues : {
-            title :"",
-            price : 30
+            title : "",
         }
     })
 
