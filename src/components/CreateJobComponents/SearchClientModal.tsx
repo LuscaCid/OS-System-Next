@@ -30,7 +30,7 @@ function InputSearchModal({input_id,input_name,input_placeholder} : InputSearchM
 
 function ModalContent () { 
     return (
-        <Dialog.Content className='mx-2 dark:bg-zinc-950 border dark:border-zinc-800/80  border-zinc-300 min-w-72 w-full max-w-96 rounded-md p-2 fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-zinc-100'>
+        <Dialog.Content className=' dark:bg-zinc-950 border dark:border-zinc-800/80  border-zinc-300 min-w-72 w-full max-w-96 rounded-md p-2 fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-zinc-100'>
             <Dialog.Close className='absolute top-2 right-2 bg-transparent cursor-pointer text-red-500 hover:text-red-600 transition duration-200'>
                 <X size={24}/> 
             </Dialog.Close>
