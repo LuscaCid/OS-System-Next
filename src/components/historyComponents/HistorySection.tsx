@@ -41,13 +41,7 @@ export async function HistorySection () {
                             )
                         })
                     }
-                    <HistoryBox 
-                        arrived_at={arrived_at}
-                        costumer_name={costumer_name}
-                        description={description}
-                        tag={tag}
-                        title={title}
-                    />
+                  
                  
                 </section>
                 
