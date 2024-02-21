@@ -11,7 +11,6 @@ export function HistoryRender () {
   }
   time()
   const {data} = useContextSelector(HistoryAndJobContext, (context) => {
-    
     return {
         data : context.JobsHistory
     }
@@ -19,6 +18,7 @@ export function HistoryRender () {
 })
   return (
     <>
+    
      {
       data.length > 0 ? data.map((element : HistoryComponentProps) => {
         return (
