@@ -1,6 +1,6 @@
 'use client'
 import { api } from "@/services/api";
-import { ReactNode, useCallback, useEffect, useState } from "react";
+import { ReactNode, SetStateAction, useCallback, useEffect, useState } from "react";
 import { createContext } from "use-context-selector";
 
 export interface HistoryComponentProps {
@@ -16,6 +16,7 @@ export interface HistoryComponentProps {
 
 interface HistoryAndJobContextProps {
   JobsHistory : HistoryComponentProps []
+  setJobsHistory : React.Dispatch<SetStateAction<HistoryComponentProps []>>
   fetchHistory : (query? : string) => Promise<HistoryComponentProps[]>
   AddAnNewJob : (newJob : HistoryComponentProps ) => Promise<void>
 }
@@ -30,33 +31,47 @@ export function HistoryAndJobContextProvider ({children} : {children : ReactNode
   const AddAnNewJob = useCallback(async (newJob : HistoryComponentProps) => {
     setJobsHistory([...JobsHistory, newJob])
     await api.post('/jobs', newJob)
+
   }, [setJobsHistory, JobsHistory])
 
   const fetchHistory = useCallback(async (query? : string) : Promise<HistoryComponentProps[]> => {
-    await new Promise(resolver => setTimeout(resolver, 1000))
     let data : HistoryComponentProps [];
     if(query) {
-      const response = await api.get(`/orders?customer_name=${query}`)
-      data = response.data
-      setJobsHistory(data)
 
+      const response = await api.get('/orders')     
+      data = response.data
+      
+      const filteredDataByEntry = data.filter((element) => {
+
+        const description = element.description
+        const device = element.device
+        const tag = element.tag
+
+        if(description!.includes(query)) return element
+        if(device.includes(query))return element
+        if(tag.includes(query))return element
+        
+      } )
+      return filteredDataByEntry
       /**
        * fazer uma especie de whereLike Fake aqui, ta? asdkask
        */
-
     } else {
       const response = await api.get('/orders')
       data = response.data
-      
-      setJobsHistory(data)
     }
     return data
   }, []) 
-
-
+  useEffect(() => {
+  (async () => {
+    const data = await fetchHistory()
+    setJobsHistory(data)
+  })
+  }, [])
   return (
     <HistoryAndJobContext.Provider value={{
       JobsHistory,
+      setJobsHistory,
       fetchHistory,
       AddAnNewJob
     }}>

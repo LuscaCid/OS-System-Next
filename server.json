@@ -200,7 +200,7 @@
         "customer_name": "Jefferson Silva",
         "description": "Tela quebrada, dispositivo não liga.",
         "tag": "tela quebrada",
-        "title": "Samsung Galaxy S20"
+        "device": "Samsung Galaxy S20"
       },
       {
         "client_id" : 3,
@@ -208,7 +208,7 @@
         "customer_name": "Maria Oliveira",
         "description": "Bateria descarregando rapidamente, desempenho lento.",
         "tag": "bateria",
-        "title": "iPhone 11"
+        "device": "iPhone 11"
       },
       {
         "client_id" :4 ,
@@ -216,7 +216,7 @@
         "customer_name": "João da Silva",
         "description": "Botões físicos não funcionam corretamente.",
         "tag": "botões",
-        "title": "Motorola Moto G9"
+        "device": "Motorola Moto G9"
       },
       {
         "client_id" : 1,
@@ -224,7 +224,7 @@
         "customer_name": "Carla Santos",
         "description": "Problemas de conexão com a rede móvel.",
         "tag": "rede móvel",
-        "title": "OnePlus Nord"
+        "device": "OnePlus Nord"
       },
       {
         "client_id" : 7,
@@ -232,7 +232,7 @@
         "customer_name": "Pedro Almeida",
         "description": "Câmera traseira não funciona.",
         "tag": "câmera",
-        "title": "Google Pixel 5"
+        "device": "Google Pixel 5"
       }
     ]
 
