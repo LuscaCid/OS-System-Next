@@ -7,22 +7,16 @@ import { useEffect } from "react"
 
 export function HistoryRender () {
  
-  const {fetchData} = useContextSelector(HistoryAndJobContext, (context) => {
+  const {fetchData, JobsHistory} = useContextSelector(HistoryAndJobContext, (context) => {
     return {
-        fetchData : context.fetchHistory
+        fetchData : context.fetchHistory,
+        JobsHistory : context.JobsHistory
     }
   }) 
-
-  const JobsHistory = useContextSelector(HistoryAndJobContext, (context) => {
-    return context.JobsHistory   
-  })
   console.log(JobsHistory)
-  
   useEffect(() => {
-
     async function load(){
       await fetchData()
-
     }
     load()
   }, [])
@@ -38,7 +32,7 @@ export function HistoryRender () {
                     costumer_name={element.customer_name}
                     description={element.description}
                     tag={element.tag}
-                    title={element.title}
+                    device={element.device}
                 /> 
             </section>
         )

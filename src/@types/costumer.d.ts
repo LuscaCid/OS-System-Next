@@ -15,4 +15,4 @@ export interface CostumerData {
 }
 
 
-export type InputNames = "title" | "problemDescription" | "price" | 'gadget'
+export type InputNames = "tag" | "description" | "price" | 'device' 

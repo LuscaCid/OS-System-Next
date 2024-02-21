@@ -8,9 +8,9 @@ export interface HistoryComponentProps {
   id : string
   arrived_at : string
   customer_name : string
-  description : string
+  description : string | undefined
   tag : string
-  title : string
+  device : string
 
 }
 

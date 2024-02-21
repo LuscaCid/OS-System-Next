@@ -3,20 +3,20 @@ import { ptBR } from 'date-fns/locale/pt-BR'
 
 interface Props {
    costumer_name : string
-   title : string
-   description : string
+   device : string
+   description? : string 
    arrived_at : Date 
    tag : string
 }
 
-export function HistoryBox({costumer_name,description,arrived_at,title, tag} : Props){
+export function HistoryBox({costumer_name,description,arrived_at,device, tag} : Props){
     
     const formatedDate = formatDistanceToNow(arrived_at, {
         addSuffix : true,
         locale : ptBR 
     })
 
-    let formattedDescription = description.slice(0,80)
+    let formattedDescription = description?.slice(0,80)
     formattedDescription = formattedDescription + '...'
     return (
         <div className='flex flex-col gap-2 p-2 bg-transparent border dark:border-zinc-800  border-zinc-300 rounded-md hover:bg-zinc-200 dark:hover:bg-zinc-800/80 transtion duration-200 shadow-md'>
@@ -24,7 +24,7 @@ export function HistoryBox({costumer_name,description,arrived_at,title, tag} : P
                 <strong className='text-zinc-950 font-bold text-lg dark:text-zinc-200'>{costumer_name}</strong> 
                 <span className='text-sm font-medium text-zinc-600 dark:text-zinc-400'>{formatedDate}</span>
             </header>
-            <h1 className='font-semibold text-md text-zinc-800 dark:text-zinc-300'>{title}</h1>
+            <h1 className='font-semibold text-md text-zinc-800 dark:text-zinc-300'>{device}</h1>
             <span className='text-zinc-600 dark:text-zinc-400 font-semibold'>
                 {formattedDescription}
             </span>
