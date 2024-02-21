@@ -1,20 +1,13 @@
-import { History } from "lucide-react";
+'use client'
+import { History, Search } from "lucide-react";
 import { HistoryBox } from "./HistoryBox";
+import { useContextSelector } from "use-context-selector";
+import { HistoryAndJobContext, HistoryComponentProps } from "@/contexts/CreateJobContext";
+import { Suspense } from "react";
+import { HistoryRender } from "./HistoryRendering";
 
-interface HistoryComponentProps {
-    client_id : number
-    id : string
-    arrived_at : string
-    customer_name : string
-    description : string
-    tag : string
-    title : string
-
-}
-export async function HistorySection () {
+export function HistorySection () {
  
-    const response = await fetch('http://localhost:4000/orders') 
-    const data : HistoryComponentProps [] = await response.json()
 
     return(
         <div className="h-full col-span-1 md:col-span-4/5 w-full  border-r border-zinc-300 dark:border-zinc-800 relative">
@@ -24,23 +17,21 @@ export async function HistorySection () {
                     </div>
                     History
                 </h1>
-                <section className=" border-t border-b border-zinc-300 dark:border-zinc-800  rounded-md m-2 flex flex-col gap-2 overflow-y-auto absolute inset-0 top-14 bottom-4 pr-2">
-                    {
-                        data.length > 0 && data.map((element : HistoryComponentProps) => {
-                            return (
-                                <section key={element.id}>
-                                    <HistoryBox 
-                                        arrived_at={new Date(element.arrived_at)}
-                                        costumer_name={element.customer_name}
-                                        description={element.description}
-                                        tag={element.tag}
-                                        title={element.title}
-
-                                    /> 
-                                </section>
-                            )
-                        })
-                    }
+                <section className="mt-2 px-2 w-full flex gap-1  items-center">
+                    <input 
+                        className="py-1 px-4  bg-zinc-300 rounded-full w-full border border-zinc-400 text-md text-zinc-950 dark:bg-zinc-700 dark:text-zinc-300 dark:border-zinc-700/80"
+                        type="text"
+                        placeholder="Search for an service" 
+                    />
+                    <button className="flex items-center w-9 h-8 pl-1 rounded-full hover:bg-zinc-200 transition duration-200 dark:hover:bg-zinc-800/80 ">
+                        <Search size={24}/>
+                    </button>
+                </section>
+                <section className=" border-t border-b border-zinc-300 dark:border-zinc-800  rounded-md m-2 flex flex-col gap-2 overflow-y-auto absolute inset-0 top-24 bottom-4 pr-2">
+                    <Suspense fallback = {<h1>Loading</h1>}>
+                        <HistoryRender />
+                    </Suspense>
+                    
                   
                  
                 </section>
