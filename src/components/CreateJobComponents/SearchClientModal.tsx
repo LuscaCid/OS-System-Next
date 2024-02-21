@@ -3,12 +3,7 @@ import { api } from '@/services/api'
 import * as Dialog from '@radix-ui/react-dialog'
 import { X } from 'lucide-react'
 import { useEffect, useState } from 'react'
-
-interface UsersProperties {  
-    id : string
-    name : string
-    cpf : string
-}
+import { UsersProperties } from './NewJobForm'
 
 export function ModalContent () { 
     const [query, setQuery] = useState<string>('')
@@ -23,6 +18,7 @@ export function ModalContent () {
     function filterDataFromQuery(usersArr : UsersProperties [] , query : string){
         const filtedDataWithinQuery = usersArr.filter((user : UsersProperties) => {
             if(user.name.includes(query) && query !== '') return user
+            //ifj(user.cpf.includes(query) && query !== '')return user
         })
         return filtedDataWithinQuery
     }
@@ -56,21 +52,21 @@ export function ModalContent () {
                     />
                     <section className='rounded-md border border-zinc-300 dark:border-zinc-800/80 min-h-4 flex flex-col gap-1  '>
                         {
-                            usersFound && usersFound.length > 0 ? (
-                                usersFound.map((user) =>{
-                                    return (
-                                        <button
-                                        type='submit'
-                                        value={user.name}
-                                        key={user.id} 
-                                            className='rounded-md w-full bg-zinc-300 dark:bg-zinc-800 p-1 text-sm font-bold '>
-                                            {user.name}
-                                        </button>
-                                    )  
-                                })
-                            ) : ( <span>
-                                    enter name or cpf to find a user
-                                </span>)
+                        usersFound && usersFound.length > 0 ? (
+                            usersFound.map((user) =>{
+                                return (
+                                    <button
+                                    type='submit'
+                                    value={user.name}
+                                    key={user.id} 
+                                        className='rounded-md w-full bg-zinc-300 dark:bg-zinc-800 p-1 text-sm font-bold '>
+                                        {user.name}
+                                    </button>
+                                )  
+                            })
+                        ) : ( <span className='p-2 text-sm font-bold'>
+                                enter name or cpf to find a user
+                            </span>)
                         } 
                     </section>
                 </form>
