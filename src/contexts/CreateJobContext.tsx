@@ -34,8 +34,13 @@ export function HistoryAndJobContextProvider ({children} : {children : ReactNode
 
   const fetchHistory = useCallback(async (query? : string) : Promise<void> => {
     if(query) {
-      const { data } = await api.get(`/orders?query=${query}`)
+      const { data } = await api.get(`/orders?customer_name=${query}`)
       setJobsHistory(data)
+
+      /**
+       * fazer uma especie de whereLike Fake aqui, ta? asdkask
+       */
+
     } else {
       const response = await api.get('/orders')
       const data : HistoryComponentProps [] = response.data
