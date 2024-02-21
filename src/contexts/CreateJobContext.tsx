@@ -16,7 +16,7 @@ export interface HistoryComponentProps {
 
 interface HistoryAndJobContextProps {
   JobsHistory : HistoryComponentProps []
-  fetchHistory : (query? : string) => Promise<void>
+  fetchHistory : (query? : string) => Promise<HistoryComponentProps[]>
   AddAnNewJob : (newJob : HistoryComponentProps ) => Promise<void>
 }
 
@@ -32,9 +32,12 @@ export function HistoryAndJobContextProvider ({children} : {children : ReactNode
     await api.post('/jobs', newJob)
   }, [setJobsHistory, JobsHistory])
 
-  const fetchHistory = useCallback(async (query? : string) : Promise<void> => {
+  const fetchHistory = useCallback(async (query? : string) : Promise<HistoryComponentProps[]> => {
+    await new Promise(resolver => setTimeout(resolver, 1000))
+    let data : HistoryComponentProps [];
     if(query) {
-      const { data } = await api.get(`/orders?customer_name=${query}`)
+      const response = await api.get(`/orders?customer_name=${query}`)
+      data = response.data
       setJobsHistory(data)
 
       /**
@@ -43,14 +46,13 @@ export function HistoryAndJobContextProvider ({children} : {children : ReactNode
 
     } else {
       const response = await api.get('/orders')
-      const data : HistoryComponentProps [] = response.data
+      data = response.data
+      
       setJobsHistory(data)
     }
+    return data
   }, []) 
 
-  useEffect(() => {
-    fetchHistory()
-  }, [fetchHistory])
 
   return (
     <HistoryAndJobContext.Provider value={{

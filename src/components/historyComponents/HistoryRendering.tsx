@@ -3,24 +3,34 @@ import { HistoryAndJobContext, HistoryComponentProps } from "@/contexts/CreateJo
 import { useContextSelector } from "use-context-selector"
 import { HistoryBox } from "./HistoryBox"
 import { LoadingHistory } from "./LoadingHistory"
-import { Suspense } from "react"
+import { useEffect } from "react"
 
 export function HistoryRender () {
-  async function time () {
-    await new Promise(resolver => setTimeout(resolver, 3000))
-  }
-  time()
-  const {data} = useContextSelector(HistoryAndJobContext, (context) => {
-    
+ 
+  const {fetchData} = useContextSelector(HistoryAndJobContext, (context) => {
     return {
-        data : context.JobsHistory
+        fetchData : context.fetchHistory
     }
-    
-})
+  }) 
+
+  const JobsHistory = useContextSelector(HistoryAndJobContext, (context) => {
+    return context.JobsHistory   
+  })
+  console.log(JobsHistory)
+  
+  useEffect(() => {
+
+    async function load(){
+      await fetchData()
+
+    }
+    load()
+  }, [])
+  
   return (
     <>
      {
-      data.length > 0 ? data.map((element : HistoryComponentProps) => {
+      JobsHistory.length > 0 ? JobsHistory.map((element : HistoryComponentProps) => {
         return (
             <section key={element.id}>
                 <HistoryBox
