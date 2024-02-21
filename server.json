@@ -1,198 +1,347 @@
 {
   "clients" : [
-    { 
-      "id" : 1,
-      "name" : "maneo gomi",
-      "email" : "maneo@email.com",
-      "created_at" : "2022/07/12",
-      "updated_at" : "2022/07/12",
-      "address" : {     
-        "street" : "Rua do Sol",
-        "number" : "123",
-        "complement" : "Apto 123",
-        "district" : "Centro",
-        "city" : "Cidade",
-        "state" : "Estado",
-        "zipcode" : "123456"
-      }
-    },
     {
-      "id": 2,
-      "name": "John Doe",
-      "email": "john@example.com",
-      "created_at": "2022/08/15",
-      "updated_at": "2022/08/15",
-      "address": {
-        "street": "Avenue Street",
-        "number": "456",
-        "complement": "Apt 456",
-        "district": "Downtown",
-        "city": "City",
-        "state": "State",
-        "zipcode": "654321"
-      }
-    },
-    {
-      "id": 3,
-      "name": "Jane Smith",
-      "email": "jane@example.com",
+      "id": 1,
+      "name": "Alice Smith",
+      "email": "alice@example.com",
+      "cpf": "98765432111",
       "created_at": "2022/09/20",
       "updated_at": "2022/09/20",
       "address": {
         "street": "Sunset Boulevard",
+        "number": "123",
+        "complement": "Apt 123",
+        "district": "Downtown",
+        "city": "City",
+        "state": "State",
+        "zipcode": "123456"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Bob Johnson",
+      "email": "bob@example.com",
+      "cpf": "12345678900",
+      "created_at": "2022/07/10",
+      "updated_at": "2022/07/10",
+      "address": {
+        "street": "Main Street",
         "number": "789",
-        "complement": "Suite 789",
-        "district": "Suburb",
-        "city": "Town",
+        "complement": "Apt 789",
+        "district": "Uptown",
+        "city": "City",
         "state": "State",
         "zipcode": "987654"
       }
     },
     {
-      "id": 4,
-      "name": "Michael Johnson",
-      "email": "michael@example.com",
-      "created_at": "2022/10/25",
-      "updated_at": "2022/10/25",
+      "id": 3,
+      "name": "Charlie Brown",
+      "email": "charlie@example.com",
+      "cpf": "45678912333",
+      "created_at": "2022/11/05",
+      "updated_at": "2022/11/05",
       "address": {
-        "street": "Main Street",
-        "number": "1011",
-        "complement": "Unit 1011",
-        "district": "Uptown",
-        "city": "Metropolis",
+        "street": "Oak Avenue",
+        "number": "456",
+        "complement": "Apt 456",
+        "district": "Suburb",
+        "city": "Town",
         "state": "State",
-        "zipcode": "112233"
+        "zipcode": "147258"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Diana Miller",
+      "email": "diana@example.com",
+      "cpf": "98712345644",
+      "created_at": "2022/10/15",
+      "updated_at": "2022/10/15",
+      "address": {
+        "street": "Pine Street",
+        "number": "789",
+        "complement": "Apt 789",
+        "district": "Outskirts",
+        "city": "City",
+        "state": "State",
+        "zipcode": "369258"
       }
     },
     {
       "id": 5,
-      "name": "Emily Brown",
-      "email": "emily@example.com",
-      "created_at": "2022/11/30",
-      "updated_at": "2022/11/30",
+      "name": "Erica Davis",
+      "email": "erica@example.com",
+      "cpf": "32165498700",
+      "created_at": "2022/12/01",
+      "updated_at": "2022/12/01",
       "address": {
-        "street": "Park Avenue",
-        "number": "1213",
-        "complement": "Apt 1213",
-        "district": "Park District",
+        "street": "Cedar Lane",
+        "number": "101",
+        "complement": "Apt 101",
+        "district": "Rural",
         "city": "Village",
         "state": "State",
-        "zipcode": "445566"
+        "zipcode": "753951"
       }
     },
     {
       "id": 6,
-      "name": "Daniel Wilson",
-      "email": "daniel@example.com",
-      "created_at": "2023/01/04",
-      "updated_at": "2023/01/04",
+      "name": "Frank Wilson",
+      "email": "frank@example.com",
+      "cpf": "45678912300",
+      "created_at": "2022/08/28",
+      "updated_at": "2022/08/28",
       "address": {
-        "street": "Ocean Drive",
-        "number": "1415",
-        "complement": "Condo 1415",
-        "district": "Beachfront",
-        "city": "Resort Town",
+        "street": "Elm Street",
+        "number": "222",
+        "complement": "Apt 222",
+        "district": "Downtown",
+        "city": "City",
         "state": "State",
-        "zipcode": "778899"
+        "zipcode": "852147"
       }
     },
     {
       "id": 7,
-      "name": "Sophia Lee",
-      "email": "sophia@example.com",
-      "created_at": "2023/02/09",
-      "updated_at": "2023/02/09",
+      "name": "Grace Brown",
+      "email": "grace@example.com",
+      "cpf": "78912345622",
+      "created_at": "2022/06/03",
+      "updated_at": "2022/06/03",
       "address": {
-        "street": "Mountain Road",
-        "number": "1617",
-        "complement": "Chalet 1617",
-        "district": "Mountain Village",
-        "city": "Mountain Town",
+        "street": "Maple Avenue",
+        "number": "333",
+        "complement": "Apt 333",
+        "district": "Suburb",
+        "city": "Town",
         "state": "State",
-        "zipcode": "112233"
+        "zipcode": "369147"
       }
     },
     {
       "id": 8,
-      "name": "Matthew Anderson",
-      "email": "matthew@example.com",
-      "created_at": "2023/03/16",
-      "updated_at": "2023/03/16",
+      "name": "Henry Taylor",
+      "email": "henry@example.com",
+      "cpf": "85236974100",
+      "created_at": "2022/05/17",
+      "updated_at": "2022/05/17",
       "address": {
-        "street": "Forest Lane",
-        "number": "1819",
-        "complement": "Cabin 1819",
-        "district": "Forest Retreat",
-        "city": "Timber Town",
+        "street": "Oak Street",
+        "number": "444",
+        "complement": "Apt 444",
+        "district": "Uptown",
+        "city": "City",
         "state": "State",
-        "zipcode": "334455"
+        "zipcode": "456987"
       }
     },
     {
       "id": 9,
-      "name": "Olivia Martinez",
-      "email": "olivia@example.com",
-      "created_at": "2023/04/21",
-      "updated_at": "2023/04/21",
+      "name": "Isabella Harris",
+      "email": "isabella@example.com",
+      "cpf": "78945612311",
+      "created_at": "2022/04/09",
+      "updated_at": "2022/04/09",
       "address": {
-        "street": "River Street",
-        "number": "2021",
-        "complement": "Boathouse 2021",
-        "district": "Riverfront",
-        "city": "Riverside",
+        "street": "Cherry Lane",
+        "number": "555",
+        "complement": "Apt 555",
+        "district": "Outskirts",
+        "city": "City",
         "state": "State",
-        "zipcode": "556677"
+        "zipcode": "147369"
       }
     },
     {
       "id": 10,
-      "name": "James Taylor",
-      "email": "james@example.com",
-      "created_at": "2023/05/26",
-      "updated_at": "2023/05/26",
+      "name": "Jack Robinson",
+      "email": "jack@example.com",
+      "cpf": "32178965422",
+      "created_at": "2022/03/22",
+      "updated_at": "2022/03/22",
       "address": {
-        "street": "Lake Avenue",
-        "number": "2223",
-        "complement": "Lake House 2223",
-        "district": "Lakeside",
-        "city": "Lake Town",
+        "street": "Pine Avenue",
+        "number": "666",
+        "complement": "Apt 666",
+        "district": "Downtown",
+        "city": "City",
         "state": "State",
-        "zipcode": "223344"
+        "zipcode": "369852"
       }
     },
     {
       "id": 11,
-      "name": "Ava Hernandez",
-      "email": "ava@example.com",
-      "created_at": "2023/06/30",
-      "updated_at": "2023/06/30",
+      "name": "Karen Clark",
+      "email": "karen@example.com",
+      "cpf": "45685236933",
+      "created_at": "2022/02/14",
+      "updated_at": "2022/02/14",
       "address": {
-        "street": "Hill Street",
-        "number": "2425",
-        "complement": "Hilltop 2425",
-        "district": "Hillside",
-        "city": "Hill Town",
+        "street": "Willow Street",
+        "number": "777",
+        "complement": "Apt 777",
+        "district": "Suburb",
+        "city": "Town",
         "state": "State",
-        "zipcode": "778899"
+        "zipcode": "123789"
       }
     },
     {
       "id": 12,
-      "name": "William Lopez",
-      "email": "william@example.com",
-      "created_at": "2023/08/04",
-      "updated_at": "2023/08/04",
+      "name": "Leo Martinez",
+      "email": "leo@example.com",
+      "cpf": "98765432100",
+      "created_at": "2022/01/01",
+      "updated_at": "2022/01/01",
       "address": {
-        "street": "Valley Road",
-        "number": "2627",
-        "complement": "Valley View 2627",
-        "district": "Valley",
-        "city": "Valley Town",
+        "street": "Cedar Street",
+        "number": "888",
+        "complement": "Apt 888",
+        "district": "Uptown",
+        "city": "City",
         "state": "State",
-        "zipcode": "334455"
+        "zipcode": "321789"
+      }
+    },
+    {
+      "id": 13,
+      "name": "Mia Garcia",
+      "email": "mia@example.com",
+      "cpf": "32198765444",
+      "created_at": "2022/08/05",
+      "updated_at": "2022/08/05",
+      "address": {
+        "street": "Maple Street",
+        "number": "999",
+        "complement": "Apt 999",
+        "district": "Outskirts",
+        "city": "City",
+        "state": "State",
+        "zipcode": "987123"
+      }
+    },
+    {
+      "id": 14,
+      "name": "Nathan Lee",
+      "email": "nathan@example.com",
+      "cpf": "65432198766",
+      "created_at": "2022/05/30",
+      "updated_at": "2022/05/30",
+      "address": {
+        "street": "Elm Avenue",
+        "number": "111",
+        "complement": "Apt 111",
+        "district": "Downtown",
+        "city": "City",
+        "state": "State",
+        "zipcode": "654789"
+      }
+    },
+    {
+      "id": 15,
+      "name": "Olivia White",
+      "email": "olivia@example.com",
+      "cpf": "78912365400",
+      "created_at": "2022/03/15",
+      "updated_at": "2022/03/15",
+      "address": {
+        "street": "Cherry Street",
+        "number": "222",
+        "complement": "Apt 222",
+        "district": "Suburb",
+        "city": "Town",
+        "state": "State",
+        "zipcode": "789123"
+      }
+    },
+    {
+      "id": 16,
+      "name": "Peter Taylor",
+      "email": "peter@example.com",
+      "cpf": "45698732122",
+      "created_at": "2022/10/20",
+      "updated_at": "2022/10/20",
+      "address": {
+        "street": "Oak Lane",
+        "number": "333",
+        "complement": "Apt 333",
+        "district": "Uptown",
+        "city": "City",
+        "state": "State",
+        "zipcode": "852369"
+      }
+    },
+    {
+      "id": 17,
+      "name": "Quinn Wilson",
+      "email": "quinn@example.com",
+      "cpf": "78932165488",
+      "created_at": "2022/09/10",
+      "updated_at": "2022/09/10",
+      "address": {
+        "street": "Main Avenue",
+        "number": "444",
+        "complement": "Apt 444",
+        "district": "Outskirts",
+        "city": "City",
+        "state": "State",
+        "zipcode": "987456"
+      }
+    },
+    {
+      "id": 18,
+      "name": "Rachel Martinez",
+      "email": "rachel@example.com",
+      "cpf": "12378945600",
+      "created_at": "2022/06/25",
+      "updated_at": "2022/06/25",
+      "address": {
+        "street": "Pine Lane",
+        "number": "555",
+        "complement": "Apt 555",
+        "district": "Downtown",
+        "city": "City",
+        "state": "State",
+        "zipcode": "147852"
+      }
+    },
+    {
+      "id": 19,
+      "name": "Samuel Adams",
+      "email": "samuel@example.com",
+      "cpf": "65498732100",
+      "created_at": "2022/04/30",
+      "updated_at": "2022/04/30",
+      "address": {
+        "street": "Cedar Avenue",
+        "number": "666",
+        "complement": "Apt 666",
+        "district": "Suburb",
+        "city": "Town",
+        "state": "State",
+        "zipcode": "789456"
+      }
+    },
+    {
+      "id": 20,
+      "name": "Taylor Brown",
+      "email": "taylor@example.com",
+      "cpf": "32145698711",
+      "created_at": "2022/02/28",
+      "updated_at": "2022/02/28",
+      "address": {
+        "street": "Maple Lane",
+        "number": "777",
+        "complement": "Apt 777",
+        "district": "Uptown",
+        "city": "City",
+        "state": "State",
+        "zipcode": "369123"
       }
     }
-  ],
+  ]
+  ,
   "orders" : [
       {
         "client_id" : 2,
@@ -200,7 +349,7 @@
         "customer_name": "Jefferson Silva",
         "description": "Tela quebrada, dispositivo não liga.",
         "tag": "tela quebrada",
-        "title": "Samsung Galaxy S20"
+        "device": "Samsung Galaxy S20"
       },
       {
         "client_id" : 3,
@@ -208,7 +357,7 @@
         "customer_name": "Maria Oliveira",
         "description": "Bateria descarregando rapidamente, desempenho lento.",
         "tag": "bateria",
-        "title": "iPhone 11"
+        "device": "iPhone 11"
       },
       {
         "client_id" :4 ,
@@ -216,7 +365,7 @@
         "customer_name": "João da Silva",
         "description": "Botões físicos não funcionam corretamente.",
         "tag": "botões",
-        "title": "Motorola Moto G9"
+        "device": "Motorola Moto G9"
       },
       {
         "client_id" : 1,
@@ -224,7 +373,7 @@
         "customer_name": "Carla Santos",
         "description": "Problemas de conexão com a rede móvel.",
         "tag": "rede móvel",
-        "title": "OnePlus Nord"
+        "device": "OnePlus Nord"
       },
       {
         "client_id" : 7,
@@ -232,7 +381,7 @@
         "customer_name": "Pedro Almeida",
         "description": "Câmera traseira não funciona.",
         "tag": "câmera",
-        "title": "Google Pixel 5"
+        "device": "Google Pixel 5"
       }
     ]
 
