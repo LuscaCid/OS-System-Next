@@ -14,5 +14,4 @@ export interface CostumerData {
 
 }
 
-
 export type InputNames = "tag" | "description" | "price" | 'device' 

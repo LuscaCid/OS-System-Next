@@ -4,13 +4,12 @@ import { ReactNode, SetStateAction, useCallback, useEffect, useState } from "rea
 import { createContext } from "use-context-selector";
 
 export interface HistoryComponentProps {
-  client_id : number
-  arrived_at : string
+  client_id : string 
   customer_name : string
+  arrived_at : string
   description : string | undefined
   tag : string
   device : string
-
 }
 
 interface HistoryAndJobContextProps {

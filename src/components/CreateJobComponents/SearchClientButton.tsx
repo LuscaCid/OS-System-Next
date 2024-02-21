@@ -1,8 +1,15 @@
-import { Search, X } from "lucide-react";
+import { ArrowUp, Search, X } from "lucide-react";
 import * as Dialog from '@radix-ui/react-dialog'
 import { ModalContent } from "./SearchClientModal";
+import { UsersProperties } from "./NewJobForm";
 
-export function SearchClientButton () {
+interface PropsDrilling{
+    selectedUser : UsersProperties | null
+    handleRemoveSelectedUser : () => void
+    handleSelectUser : (userSelected : UsersProperties) => void
+}
+
+export function SearchClientButton ({selectedUser, handleSelectUser, handleRemoveSelectedUser} : PropsDrilling) {
     return (
         <section className='flex flex-col gap-2 mt-4'>
             <Dialog.Root>
@@ -11,14 +18,16 @@ export function SearchClientButton () {
                         Select an Client <Search strokeWidth={1.25} size={20}/>
                     </button>
                 </Dialog.Trigger>    
-                <ModalContent />
+                <ModalContent handleSelectUser={handleSelectUser} />
             </Dialog.Root>
             <span className='p-3 border flex items-center justify-between dark:border-zinc-800 border-zinc-300 rounded-md dark:hover:bg-zinc-800/80 hover:bg-zinc-200 transition duration-200 '>
-                Werlay dos Santos
-                <X 
-                    className='text-red-500 cursor-pointer' 
-                    size={20} 
-                />
+                { 
+                    selectedUser?.name ? selectedUser.name : <span className="flex items-center"> Select an client above <ArrowUp size={20} className="mx-4" /></span> 
+                }
+                {
+                    selectedUser?.name && <X onClick={handleRemoveSelectedUser} className='text-red-500 cursor-pointer' size={20}/> 
+                }
+                
             </span>
         </section>
         

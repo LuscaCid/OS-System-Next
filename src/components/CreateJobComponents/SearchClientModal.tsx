@@ -5,7 +5,10 @@ import { X } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { UsersProperties } from './NewJobForm'
 
-export function ModalContent () { 
+interface Props {
+    handleSelectUser : (userSelected : UsersProperties) => void
+}
+export function ModalContent ({handleSelectUser} : Props) { 
     const [query, setQuery] = useState<string>('')
     const [usersFound, setUsersFound] = useState<UsersProperties []>()
 
@@ -26,6 +29,11 @@ export function ModalContent () {
         })
         return filteredDataWithinQuery
     }
+
+    function handleSelectAUserInsideThisFunction(data : UsersProperties) {
+        handleSelectUser(data)
+    }
+
     useEffect(() =>{
         async function load(){
             const usersArr = await fetchUser()         
@@ -45,37 +53,34 @@ export function ModalContent () {
                 <Dialog.Title className='text-lg font-bold dark:text-zinc-300 text-zinc-900 mb-4'>
                     Search
                 </Dialog.Title>
-                <form action="">
-                   <input 
-                        className='bg-transparent mb-2 w-full px-2 py-1 rounded-full border border-zinc-300 dark:border-zinc-800/80 dark:text-zinc-300 text-zinc-950 '
-                        placeholder='name or cpf'
-                        type="text" 
-                        onChange={e => setQuery(e.target.value)}
-                    />
-                    <section className='rounded-md border h-40 border-zinc-300 dark:border-zinc-800/80 min-h-4 flex flex-col gap-1 overflow-y-auto '>
-                        {
-                        usersFound && usersFound.length > 0 ? (
-                            usersFound.map((user) =>{
-                                return (
-                                    <Dialog.Close asChild key={user.id}>
-                                        <button
-                                            type='submit'
-                                            value={user.name}
-                                        
-                                            className='rounded-md w-full bg-zinc-300 dark:bg-zinc-800 p-1 text-sm font-bold dark:hover:bg-zinc-900 transition duration-200 hover:bg-zinc-400'>
-                                            {user.name}
-                                        </button>
-                                    </Dialog.Close>
-                                    
-                                )  
-                            })
-                        ) : ( <span className='p-2 text-sm font-bold'>
-                                enter name or cpf to find a user
-                            </span>)
-                        } 
-                    </section>
-                </form>
-                    
+                
+                <input 
+                    className='bg-transparent mb-2 w-full px-2 py-1 rounded-full border border-zinc-300 dark:border-zinc-800/80 dark:text-zinc-300 text-zinc-950 '
+                    placeholder='name or cpf'
+                    type="text" 
+                    onChange={e => setQuery(e.target.value)}
+                />
+                <section className='rounded-md border h-40 border-zinc-300 dark:border-zinc-800/80 min-h-4 flex flex-col gap-1 overflow-y-auto p-2 '>
+                    {
+                    usersFound && usersFound.length > 0 ? (
+                        usersFound.map((user) =>{
+                            return (
+                                <Dialog.Close asChild key={user.id}>
+                                    <button
+                                        type='submit'
+                                        value={user.name}
+                                        onClick={() => handleSelectAUserInsideThisFunction(user)}
+                                        className='rounded-md w-full bg-zinc-300 dark:bg-zinc-800 p-1 text-sm font-bold dark:hover:bg-zinc-900 transition duration-200 hover:bg-zinc-400'>
+                                        {user.name}
+                                    </button>
+                                </Dialog.Close>  
+                            )  
+                        })
+                    ) : ( <span className='p-2 text-sm font-bold'>
+                            enter name or cpf to find a user
+                        </span>)
+                    } 
+                </section>
             </Dialog.Content>
         </Dialog.Portal>
         
