@@ -4,12 +4,14 @@ import { ReactNode, SetStateAction, useCallback, useEffect, useState } from "rea
 import { createContext } from "use-context-selector";
 
 export interface HistoryComponentProps {
+  id? : string
   client_id : string 
   customer_name : string
   arrived_at : string
   description : string | undefined
   tag : string
   device : string
+  price : number
 }
 
 interface HistoryAndJobContextProps {
@@ -28,11 +30,18 @@ export function HistoryAndJobContextProvider ({children} : {children : ReactNode
 
   const AddAnNewJob = useCallback(async (newJob : HistoryComponentProps) => {
     setJobsHistory([...JobsHistory, newJob])
-    await api.post('/jobs', newJob)
+    try {
+      const response = await api.post('/orders', newJob)
+      const actualJobAdicted = response.data
+      setJobsHistory(prevState => [...prevState, actualJobAdicted])
+    } catch (e) {
+      return console.log(e)
+    }
 
   }, [setJobsHistory, JobsHistory])
 
   const fetchHistory = useCallback(async (query? : string) : Promise<HistoryComponentProps[]> => {
+    
     let data : HistoryComponentProps [];
     if(query) {
 

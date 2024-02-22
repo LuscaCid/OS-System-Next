@@ -1,5 +1,6 @@
 import { LucideIcon } from "lucide-react"
 import { InputNames } from "@/@types/costumer"
+import { ChangeEvent } from "react"
 
 interface InputProps {
     placeholder : string
@@ -8,9 +9,11 @@ interface InputProps {
     input_type : string
     required_input : boolean
     input_name : InputNames
+    input_value : string | number
+    onChangeFunction : (e : ChangeEvent<HTMLInputElement>) => void
 }
 
-export function Input({input_type,error_message,icon : Icon ,placeholder, required_input, input_name} : InputProps ) {
+export function Input({onChangeFunction, input_type,error_message,icon : Icon ,placeholder, required_input, input_name, input_value} : InputProps ) {
     
     
 
@@ -25,6 +28,8 @@ export function Input({input_type,error_message,icon : Icon ,placeholder, requir
                     type={input_type} 
                     placeholder={placeholder}
                     required = {required_input}
+                    onChange={onChangeFunction}
+                    value={input_value}
                 />
             </div>
             <span className=" invisible absolute text-sm text-red-500 font-bold">{error_message}</span>

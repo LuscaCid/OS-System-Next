@@ -16,7 +16,7 @@ export function HistoryRender () {
         JobsHistory.length > 0 && JobsHistory.map((element : HistoryComponentProps) => {
           return (   
             <HistoryBox
-              key={element.client_id}
+              key={String(Math.random()*100)}
               arrived_at={new Date(element.arrived_at)}
               costumer_name={element.customer_name}
               description={element.description}

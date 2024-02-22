@@ -4,8 +4,8 @@ import { CaseSensitive, Coins, PenLine, Smartphone } from 'lucide-react'
 import { PenBox } from 'lucide-react'
 import { SearchClientButton } from './SearchClientButton'
 import { useContextSelector } from 'use-context-selector'
-import { HistoryAndJobContext } from '@/contexts/CreateJobContext'
-import { FormEvent, useState } from 'react'
+import { HistoryAndJobContext, HistoryComponentProps } from '@/contexts/CreateJobContext'
+import { ChangeEvent, FormEvent, useState } from 'react'
 
 export interface UsersProperties {  
     id : string
@@ -15,8 +15,12 @@ export interface UsersProperties {
 
 export function NewJobForm() {
 
+    const [device, setDevice] = useState<string>('')
+    const [tag, setTag] = useState<string>('')
+    const [price, setPrice] = useState<number>(10)
+    const [description, setDescription] = useState<string>('')
     const [userSelected, setUserSelected] = useState<UsersProperties | null>(null)
-
+    
     const AddAnNewJob = useContextSelector(HistoryAndJobContext, (context) => {
         return context.AddAnNewJob
     })
@@ -32,18 +36,27 @@ export function NewJobForm() {
     function HandleCreateNewJob(e : FormEvent){
         e.preventDefault()
         console.log('dasd')
-        /*const newJob : HistoryComponentProps = {
+        const newJob : HistoryComponentProps = {
             arrived_at : new Date().toISOString(),
-            device : data.device,
-            description : data.description,
-            tag : data.tag,
+            device : device,
+            description : description,
+            tag : tag,
             client_id : userSelected!.id,
             customer_name : userSelected!.name,
-        } */
-        
+            price : price
+        }
+        reset()
+        AddAnNewJob(newJob)
     }
-    
-  
+
+    function reset(){
+        setDevice('')
+        setTag('')
+        setPrice(0)
+        setDescription('')
+        setUserSelected(null)
+    }
+
     return(
         <section className=' absolute inset-0 top-14 m-2'>        
             <form 
@@ -53,33 +66,40 @@ export function NewJobForm() {
                 <h1 className='border-b dark:text-zinc-300 dark:border-zinc-800 border-zinc-300 w-full pb-1 text-xl text-zinc-800 font-bold mb-2 flex justify-between items-center'>Type some info to create a new Job <PenBox size={32} /></h1>
             
                 <Input 
+                    input_value = {device}
                     input_type='text'
                     placeholder='device'
                     required_input
                     error_message='Type an name of gadget.'
                     icon={Smartphone}
                     input_name='device'
+                    onChangeFunction={(e : ChangeEvent<HTMLInputElement>) => setDevice(e.target.value)}
                 />
-                    <Input 
+                <Input 
+                    input_value = {tag}
                     input_type='text'
                     placeholder='Tag'
                     required_input
                     error_message='Type an title!'
                     icon={CaseSensitive}
                     input_name='tag'
+                    onChangeFunction={(e : ChangeEvent<HTMLInputElement>) => setTag(e.target.value) }
                 />
                 <Input 
+                    input_value={price}
                     input_type='number'
                     placeholder='Price'
                     required_input
                     error_message='Type an Price!'
                     icon={Coins}
-                    
                     input_name='price'
+                    onChangeFunction={e => setPrice(parseInt(e.target.value))}
                 />
                 <textarea 
+                    value={description}
                     className='p-2 resize-none bg-transparent border dark:border-zinc-800 border-zinc-300 rounded-md shadow-md min-h-20'
                     placeholder='Set the description relating devices problems...'
+                    onChange={(e : ChangeEvent<HTMLTextAreaElement>) => setDescription(e.target.value)}
                     
                 />
 

@@ -1,5 +1,5 @@
 {
-  "clients" : [
+  "clients": [
     {
       "id": 1,
       "name": "Alice Smith",
@@ -340,50 +340,137 @@
         "zipcode": "369123"
       }
     }
+  ],
+  "orders": [
+    {
+      "id": "2312",
+      "client_id": 2,
+      "arrived_at": "2024-02-12",
+      "customer_name": "Jefferson Silva",
+      "description": "Tela quebrada, dispositivo não liga.",
+      "tag": "tela quebrada",
+      "device": "Samsung Galaxy S20"
+    },
+    {
+      "id": "312",
+      "client_id": 3,
+      "arrived_at": "2024-02-15",
+      "customer_name": "Maria Oliveira",
+      "description": "Bateria descarregando rapidamente, desempenho lento.",
+      "tag": "bateria",
+      "device": "iPhone 11"
+    },
+    {
+      "client_id": 4,
+      "arrived_at": "2024-02-20",
+      "customer_name": "João da Silva",
+      "description": "Botões físicos não funcionam corretamente.",
+      "tag": "botões",
+      "device": "Motorola Moto G9"
+    },
+    {
+      "id": "1234",
+      "client_id": 1,
+      "arrived_at": "2024-02-25",
+      "customer_name": "Carla Santos",
+      "description": "Problemas de conexão com a rede móvel.",
+      "tag": "rede móvel",
+      "device": "OnePlus Nord"
+    },
+    {
+      "client_id": 7,
+      "arrived_at": "2024-03-01",
+      "customer_name": "Pedro Almeida",
+      "description": "Câmera traseira não funciona.",
+      "tag": "câmera",
+      "device": "Google Pixel 5"
+    },
+    {
+      "id": "7e7b",
+      "arrived_at": "2024-02-22T19:17:24.958Z",
+      "device": "samsumg",
+      "description": "muito problema na questao do displau, nao esta mostrando direito",
+      "tag": "display",
+      "client_id": 2,
+      "customer_name": "Bob Johnson"
+    },
+    {
+      "id": "4871",
+      "arrived_at": "2024-02-22T19:17:39.438Z",
+      "device": "samsumg",
+      "description": "muito problema na questao do displau, nao esta mostrando direito",
+      "tag": "display",
+      "client_id": 2,
+      "customer_name": "Bob Johnson"
+    },
+    {
+      "id": "3e22",
+      "arrived_at": "2024-02-22T19:19:45.021Z",
+      "device": "samsumg",
+      "description": "2dqawdasdas",
+      "tag": "display",
+      "client_id": 3,
+      "customer_name": "Charlie Brown"
+    },
+    {
+      "id": "c2c8",
+      "arrived_at": "2024-02-22T19:26:18.229Z",
+      "device": "iphone de clara",
+      "description": "nenhum problema. ele ta zeradooo",
+      "tag": "clara",
+      "client_id": 5,
+      "customer_name": "Erica Davis",
+      "price": 2000
+    },
+    {
+      "id": "b10c",
+      "arrived_at": "2024-02-22T19:30:31.837Z",
+      "device": "celular de cainan ",
+      "description": "descricao aleatoria sobre a camera frontal de cainan",
+      "tag": "camera frontal",
+      "client_id": 5,
+      "customer_name": "Erica Davis",
+      "price": 5000
+    },
+    {
+      "id": "5244",
+      "arrived_at": "2024-02-22T19:40:35.805Z",
+      "device": "iphone de clara",
+      "description": "kjnasdkjasdkjndsnkjandaskjnd",
+      "tag": "display",
+      "client_id": 18,
+      "customer_name": "Rachel Martinez",
+      "price": 2000
+    },
+    {
+      "id": "6e56",
+      "arrived_at": "2024-02-22T19:43:31.277Z",
+      "device": "dasda",
+      "description": "dawdas",
+      "tag": "dasdas",
+      "client_id": 3,
+      "customer_name": "Charlie Brown",
+      "price": 2131
+    },
+    {
+      "id": "d61d",
+      "arrived_at": "2024-02-22T19:44:24.437Z",
+      "device": "samsumg",
+      "description": "",
+      "tag": "adw",
+      "client_id": 3,
+      "customer_name": "Charlie Brown",
+      "price": 213
+    },
+    {
+      "id": "78d7",
+      "arrived_at": "2024-02-22T19:47:15.668Z",
+      "device": "samsumg",
+      "description": "awsjdaskj",
+      "tag": "display",
+      "client_id": 1,
+      "customer_name": "Alice Smith",
+      "price": 100
+    }
   ]
-  ,
-  "orders" : [
-      {
-        "client_id" : 2,
-        "arrived_at": "2024-02-12",
-        "customer_name": "Jefferson Silva",
-        "description": "Tela quebrada, dispositivo não liga.",
-        "tag": "tela quebrada",
-        "device": "Samsung Galaxy S20"
-      },
-      {
-        "client_id" : 3,
-        "arrived_at": "2024-02-15",
-        "customer_name": "Maria Oliveira",
-        "description": "Bateria descarregando rapidamente, desempenho lento.",
-        "tag": "bateria",
-        "device": "iPhone 11"
-      },
-      {
-        "client_id" :4 ,
-        "arrived_at": "2024-02-20",
-        "customer_name": "João da Silva",
-        "description": "Botões físicos não funcionam corretamente.",
-        "tag": "botões",
-        "device": "Motorola Moto G9"
-      },
-      {
-        "client_id" : 1,
-        "arrived_at": "2024-02-25",
-        "customer_name": "Carla Santos",
-        "description": "Problemas de conexão com a rede móvel.",
-        "tag": "rede móvel",
-        "device": "OnePlus Nord"
-      },
-      {
-        "client_id" : 7,
-        "arrived_at": "2024-03-01",
-        "customer_name": "Pedro Almeida",
-        "description": "Câmera traseira não funciona.",
-        "tag": "câmera",
-        "device": "Google Pixel 5"
-      }
-    ]
-
 }
-  
