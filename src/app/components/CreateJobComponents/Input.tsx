@@ -9,11 +9,10 @@ interface InputProps {
     input_type : string
     required_input : boolean
     input_name : InputNames
-    input_value : string | number
-    onChangeFunction : (e : ChangeEvent<HTMLInputElement>) => void
+
 }
 
-export function Input({onChangeFunction, input_type,error_message,icon : Icon ,placeholder, required_input, input_name, input_value} : InputProps ) {
+export function Input({ input_type,error_message,icon : Icon ,placeholder, required_input, input_name, } : InputProps ) {
     
     
 
@@ -23,13 +22,12 @@ export function Input({onChangeFunction, input_type,error_message,icon : Icon ,p
                 {Icon && <Icon size={26} className="absolute left-1"/>}
                 <label className="sr-only" htmlFor={input_name}>{input_name}</label>
                 <input 
-                    id={input_name}
+                    name={input_name}
                     className="bg-transparent w-full py-2 pl-10 "
                     type={input_type} 
                     placeholder={placeholder}
                     required = {required_input}
-                    onChange={onChangeFunction}
-                    value={input_value}
+                    
                 />
             </div>
             <span className=" invisible absolute text-sm text-red-500 font-bold">{error_message}</span>

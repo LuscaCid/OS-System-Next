@@ -17,7 +17,6 @@ export interface HistoryComponentProps {
 interface HistoryAndJobContextProps {
   JobsHistory : HistoryComponentProps []
   setJobsHistory : React.Dispatch<SetStateAction<HistoryComponentProps []>>
-  fetchHistory : (query? : string) => Promise<HistoryComponentProps[]>
   AddAnNewJob : (newJob : HistoryComponentProps ) => Promise<void>
 }
 
@@ -40,52 +39,12 @@ export function HistoryAndJobContextProvider ({children} : {children : ReactNode
 
   }, [setJobsHistory, JobsHistory])
 
-  const fetchHistory = useCallback(async (query? : string) : Promise<HistoryComponentProps[] > => {
-    
-    let data : HistoryComponentProps [] = [];
-    if(query) {
-      try {
-        const response = await api.get('/orders')     
-        data = response.data
-        
-        const filteredDataByEntry = data.filter((element) => {
-  
-          const description = element.description?.toLowerCase()
-          const device = element.device?.toLowerCase()
-          const tag = element.tag?.toLowerCase()
-  
-          if(description!.includes(query?.toLowerCase())) return element
-          if(device.includes(query?.toLowerCase()))return element
-          if(tag.includes(query?.toLowerCase()))return element
-          
-        } )
-        return filteredDataByEntry
-        /**
-         * fazer uma especie de whereLike Fake aqui, ta? asdkask
-         */
-      } catch (err : any) {
-        alert(err.message)
-        return data
-        
-      }
-     
-    }
-    try {
-      const response = await api.get('/orders')
-      data = response.data
-      return data
-    } catch(err : any) {
-      alert(err.message)
-      return data
-    }
-      
-  }, []) 
+ 
   
   return (
     <HistoryAndJobContext.Provider value={{
       JobsHistory,
       setJobsHistory,
-      fetchHistory,
       AddAnNewJob
     }}>
       {children}

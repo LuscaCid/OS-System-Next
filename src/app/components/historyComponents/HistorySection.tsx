@@ -2,7 +2,7 @@
 import { History } from "lucide-react";
 import { useState } from 'react'
 import { Suspense } from "react";
-import HistoryRender from "./HistoryRendering";
+import HistoryRenderFetch from "./HistoryFetch";
 import LoadingHistory from "./loading";
 
 export function HistorySection () {
@@ -25,10 +25,12 @@ export function HistorySection () {
                     onChange={(e) => setQuery(e.target.value)}
                 />
             </div>
-        <div className="border-t border-b border-zinc-300 dark:border-zinc-800  rounded-md m-2 flex flex-col gap-2 overflow-y-auto absolute inset-0 top-24 bottom-1 pr-1">           
-            <Suspense fallback={<LoadingHistory />}>
-                <HistoryRender query={query} /> 
-            </Suspense>
+        
+        <div className="border-t border-b border-zinc-300 dark:border-zinc-800  rounded-md m-2 flex flex-col gap-2 overflow-y-auto absolute inset-0 top-24 bottom-1 pr-1">    
+        <Suspense fallback = {<LoadingHistory />}>
+            <HistoryRenderFetch query={query} />
+            
+        </Suspense>       
            
             </div>                                     
         </div>

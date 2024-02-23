@@ -12,7 +12,7 @@ interface Props {
 
 export function HistoryBox({costumer_name,description,arrived_at,device, tag} : Props){
     
-    const formatedDate = formatDistanceToNow(arrived_at, {
+    const formattedDate = formatDistanceToNow(arrived_at, {
         addSuffix : true,
         locale : ptBR 
     })
@@ -23,7 +23,7 @@ export function HistoryBox({costumer_name,description,arrived_at,device, tag} : 
         <div className='flex flex-col gap-2 p-2 bg-transparent border dark:border-zinc-800  border-zinc-300 rounded-md hover:bg-zinc-200 dark:hover:bg-zinc-800/80 transtion duration-200 shadow-md'>
             <header className='flex justify-between items-center'>
                 <strong className='text-zinc-950 font-bold text-lg dark:text-zinc-200'>{costumer_name}</strong> 
-                <span className='text-sm font-medium text-zinc-600 dark:text-zinc-400'>{formatedDate}</span>
+                <span className='text-sm font-medium text-zinc-600 dark:text-zinc-400'>{formattedDate}</span>
             </header>
             <h1 className='font-semibold text-md text-zinc-800 dark:text-zinc-300'>{device}</h1>
             <span className='text-zinc-600 dark:text-zinc-400 font-semibold'>

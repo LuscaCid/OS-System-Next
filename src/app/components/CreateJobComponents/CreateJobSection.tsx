@@ -1,5 +1,7 @@
+'use client'
 import { Plus } from "lucide-react";
-import { NewJobForm } from "./NewJobForm";
+import { NewJobForm, UsersProperties } from "./NewJobForm";
+import { useState } from "react";
 
 export function CreateJobSection () {
     return (

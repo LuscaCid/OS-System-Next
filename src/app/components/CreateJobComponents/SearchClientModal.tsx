@@ -79,7 +79,7 @@ export function ModalContent ({handleSelectUser} : Props) {
                                 </Dialog.Close>  
                             )  
                         })
-                    ) : ( <span className='p-2 text-sm font-bold'>
+                    ) : (<span className='p-2 text-sm font-bold'>
                             enter name or cpf to find a user
                         </span>)
                     } 

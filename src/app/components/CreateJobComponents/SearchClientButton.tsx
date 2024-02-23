@@ -1,3 +1,4 @@
+'use client'
 import { ArrowUp, Search, X } from "lucide-react";
 import * as Dialog from '@radix-ui/react-dialog'
 import { ModalContent } from "./SearchClientModal";
@@ -5,11 +6,19 @@ import { UsersProperties } from "./NewJobForm";
 
 interface PropsDrilling{
     selectedUser : UsersProperties | null
-    handleRemoveSelectedUser : () => void
-    handleSelectUser : (userSelected : UsersProperties) => void
+    
 }
 
-export function SearchClientButton ({selectedUser, handleSelectUser, handleRemoveSelectedUser} : PropsDrilling) {
+export function SearchClientButton ({ selectedUser } : PropsDrilling) {
+
+
+    function handleSelectUser (user : UsersProperties) {
+
+    }
+
+    function handleRemoveSelectedUser () {
+        
+    }
 
     const styleOfButton = `font-bold items-center flex justify-between dark:text-zinc-300  w-full bg-transparent p-3 border dark:hover:bg-zinc-800/80 border-zinc-300 dark:border-zinc-800 rounded-md hover:bg-zinc-200/50 transition duration-200 cursor-text ${selectedUser === null && "animate-pulse"}`
     
