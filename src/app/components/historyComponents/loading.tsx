@@ -1,4 +1,4 @@
-export function LoadingHistory (){
+export default function LoadingHistory (){
   return (
     <>
       <div className="flex flex-col gap-3 bg-zinc-200 w-full h-36 rounded-md p-2 animate-pulse dark:bg-zinc-800/80">

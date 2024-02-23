@@ -1,8 +1,8 @@
 
-import { CreateJobSection } from "@/components/CreateJobComponents/CreateJobSection";
+import { CreateJobSection } from "@/app/components/CreateJobComponents/CreateJobSection";
 import { Header } from "@/components/Header";
 import { Sidebar } from "@/components/Sidebar";
-import { HistorySection } from "@/components/historyComponents/HistorySection";
+import { HistorySection } from "@/app/components/historyComponents/HistorySection";
 import { HistoryAndJobContextProvider } from "@/contexts/CreateJobContext";
 import { SideBarContextProvider } from "@/contexts/SidebarMenu";
 
@@ -18,8 +18,8 @@ export default function Home() {
           <main className="h-full grid grid-cols-1 md:grid-cols-2 w-full">
               <HistoryAndJobContextProvider>
                   <>
-                      <HistorySection />
-                      <CreateJobSection />
+                    <HistorySection />
+                    <CreateJobSection />
                   </>
               </HistoryAndJobContextProvider>
               

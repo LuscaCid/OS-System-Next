@@ -1,27 +1,13 @@
 'use client'
-import { History, Search } from "lucide-react";
-import { FormEvent, useEffect, useState } from 'react'
-import { useContextSelector } from "use-context-selector";
-import { HistoryAndJobContext } from "@/contexts/CreateJobContext";
+import { History } from "lucide-react";
+import { useState } from 'react'
 import { Suspense } from "react";
-import { HistoryRender } from "./HistoryRendering";
-import { LoadingHistory } from "./loading";
+import HistoryRender from "./HistoryRendering";
+import LoadingHistory from "./loading";
 
 export function HistorySection () {
  
     const [query, setQuery] = useState<string>('')
-
-    const {fetchData, setJobsHistory} = useContextSelector(HistoryAndJobContext, (context) => {
-        return {
-            fetchData : context.fetchHistory,
-            setJobsHistory : context.setJobsHistory
-        }
-    }) 
-
-    useEffect(() => {
-        fetchData(query).then(data => setJobsHistory(data))
-        if(query.length===0)fetchData().then(data => setJobsHistory(data))
-    }, [query, fetchData, setJobsHistory])
 
     return(
         <div className="h-full col-span-1 md:col-span-4/5 w-full  border-r border-zinc-300 dark:border-zinc-800 relative">
@@ -41,8 +27,9 @@ export function HistorySection () {
             </div>
         <div className="border-t border-b border-zinc-300 dark:border-zinc-800  rounded-md m-2 flex flex-col gap-2 overflow-y-auto absolute inset-0 top-24 bottom-1 pr-1">           
             <Suspense fallback={<LoadingHistory />}>
-                <HistoryRender /> 
+                <HistoryRender query={query} /> 
             </Suspense>
+           
             </div>                                     
         </div>
     )

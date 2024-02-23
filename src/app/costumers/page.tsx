@@ -3,8 +3,8 @@ import { Header } from "@/components/Header";
 import { Sidebar } from "@/components/Sidebar";
 import { SideBarContextProvider } from "@/contexts/SidebarMenu";
 
-export default function Costumers () {
-
+export async function Costumers () {
+  await new Promise(resolver => setTimeout(resolver, 2000))
     return (
         
         <>
@@ -20,3 +20,4 @@ export default function Costumers () {
       </>
     )
 }
+export default Costumers

@@ -1,7 +1,7 @@
 'use client'
 import { ChevronsUpDown, User, Home as HomeIcon, UsersRound, Settings2 } from "lucide-react";
-import { LiLink } from "./SidebarComponents/LiLink";
-import { ChangeTheme } from "./SidebarComponents/ThemeMode";
+import { LiLink } from "../app/components/SidebarComponents/LiLink";
+import { ChangeTheme } from "../app/components/SidebarComponents/ThemeMode";
 import { useContextSelector } from "use-context-selector";
 import { SidebarContext } from "@/contexts/SidebarMenu";
 

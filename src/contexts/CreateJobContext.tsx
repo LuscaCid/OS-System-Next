@@ -17,7 +17,7 @@ export interface HistoryComponentProps {
 interface HistoryAndJobContextProps {
   JobsHistory : HistoryComponentProps []
   setJobsHistory : React.Dispatch<SetStateAction<HistoryComponentProps []>>
-  fetchHistory : (query? : string) => Promise<HistoryComponentProps[] | void>
+  fetchHistory : (query? : string) => Promise<HistoryComponentProps[]>
   AddAnNewJob : (newJob : HistoryComponentProps ) => Promise<void>
 }
 
@@ -50,13 +50,13 @@ export function HistoryAndJobContextProvider ({children} : {children : ReactNode
         
         const filteredDataByEntry = data.filter((element) => {
   
-          const description = element.description
-          const device = element.device
-          const tag = element.tag
+          const description = element.description?.toLowerCase()
+          const device = element.device?.toLowerCase()
+          const tag = element.tag?.toLowerCase()
   
-          if(description!.includes(query)) return element
-          if(device.includes(query))return element
-          if(tag.includes(query))return element
+          if(description!.includes(query?.toLowerCase())) return element
+          if(device.includes(query?.toLowerCase()))return element
+          if(tag.includes(query?.toLowerCase()))return element
           
         } )
         return filteredDataByEntry
@@ -80,12 +80,7 @@ export function HistoryAndJobContextProvider ({children} : {children : ReactNode
     }
       
   }, []) 
-  useEffect(() => {
-  (async () => {
-    const data = await fetchHistory()
-    data && setJobsHistory(data)
-  })
-  }, [ fetchHistory])
+  
   return (
     <HistoryAndJobContext.Provider value={{
       JobsHistory,
