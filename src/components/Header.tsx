@@ -12,7 +12,8 @@ export function Header() {
     }
   })
   function handleChangeIsOpen(){
-    setIsOpen(isOpen)
+    setIsOpen()
+    console.log(isOpen)
   }
   return (
     <header className="flex justify-between items-center  p-1  w-full bg-transparent shadow-md ">

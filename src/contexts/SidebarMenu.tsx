@@ -4,7 +4,7 @@ import { createContext } from "use-context-selector";
 
 interface SidebarContextProps {
   isOpen : boolean;
-  changeIsOpenValue : (isOpen : boolean) => void 
+  changeIsOpenValue : () => void 
 }
 
 interface FunctionProviderProps {
@@ -16,7 +16,7 @@ export const SidebarContext = createContext({} as SidebarContextProps)
 export function SideBarContextProvider ({children} : FunctionProviderProps) {
   const [isOpen, setIsOpen] = useState<boolean>(true)
   
-  function changeIsOpenValue(isOpen : boolean){
+  function changeIsOpenValue(){
     setIsOpen(!isOpen)
   }
   return (

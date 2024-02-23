@@ -25,5 +25,6 @@
 }
 
 .open-menu{
-  
+  width: 144px;
+  transition: width .3s;
 }

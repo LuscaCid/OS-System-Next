@@ -16,7 +16,7 @@ export function ThemeTriggerButton({currentTheme} : props){
   }, [setIsDark, currentTheme ]) 
   return ( 
     <Dialog.Trigger asChild>
-      <button type='button' className='text-sm font-bold items-center flex justify-between dark:text-zinc-300  w-full bg-transparent p-1 px-3 border dark:hover:bg-zinc-800/80 border-zinc-300 dark:border-zinc-800/80 rounded-md hover:bg-zinc-200/50 transition duration-200 cursor-pointer'>
+      <button type='button' className='text-sm font-bold items-center flex justify-between dark:text-zinc-300  w-full bg-transparent p-1 px-3 border dark:hover:bg-zinc-900/80 border-zinc-300 dark:border-zinc-900/80 rounded-md hover:bg-zinc-300 transition duration-200 cursor-pointer'>
         Theme {isDark ? (<Moon size={20} />) : (<Sun size={20}/>)}  
         <ChevronsUpDown size={20} />
       </button>
