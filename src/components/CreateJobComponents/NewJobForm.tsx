@@ -33,9 +33,8 @@ export function NewJobForm() {
         setUserSelected(null)
     }
 
-    function HandleCreateNewJob(e : FormEvent){
+    async function HandleCreateNewJob(e : FormEvent){
         e.preventDefault()
-        console.log('dasd')
         const newJob : HistoryComponentProps = {
             arrived_at : new Date().toISOString(),
             device : device,
@@ -46,7 +45,7 @@ export function NewJobForm() {
             price : price
         }
         reset()
-        AddAnNewJob(newJob)
+        await AddAnNewJob(newJob)
     }
 
     function reset(){
@@ -61,7 +60,7 @@ export function NewJobForm() {
         <section className=' absolute inset-0 top-14 m-2'>        
             <form 
             onSubmit = {HandleCreateNewJob}
-            className='h-full border dark:border-zinc-800 border-zinc-300 rounded-md w-full py-2 px-2 shadow-lg flex flex-col gap-2'>
+            className='h-full border dark:border-zinc-800 border-zinc-300 rounded-md w-full py-2 px-2 shadow-lg flex flex-col gap-2 overflow-y-auto'>
                 
                 <h1 className='border-b dark:text-zinc-300 dark:border-zinc-800 border-zinc-300 w-full pb-1 text-xl text-zinc-800 font-bold mb-2 flex justify-between items-center'>Type some info to create a new Job <PenBox size={32} /></h1>
             
@@ -111,7 +110,7 @@ export function NewJobForm() {
                 
                 <button 
                     type='submit'
-                    className=' disabled:opacity-5 disabled:cursor-not-allowed flex items-center justify-center bg-transparent text-zinc-950 dark:text-zinc-300 rounded-md p-1 hover:bg-zinc-200  dark:hover:bg-zinc-800/90 transition duration-200 border dark:border-zinc-800 border-zinc-300  shadow-lg'
+                    className=' disabled:opacity-5 disabled:cursor-not-allowed flex items-center justify-center bg-transparent text-zinc-950 dark:text-zinc-300 rounded-md p-2 flex-end hover:bg-zinc-200  dark:hover:bg-zinc-800/90 transition duration-200 border dark:border-zinc-800 border-zinc-300  shadow-lg'
                     >
                     <PenLine size={24} /> Generate
                 </button>      

@@ -1,7 +1,7 @@
 {
   "clients": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Alice Smith",
       "email": "alice@example.com",
       "cpf": "98765432111",
@@ -18,7 +18,7 @@
       }
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Bob Johnson",
       "email": "bob@example.com",
       "cpf": "12345678900",
@@ -35,7 +35,7 @@
       }
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Charlie Brown",
       "email": "charlie@example.com",
       "cpf": "45678912333",
@@ -52,7 +52,7 @@
       }
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Diana Miller",
       "email": "diana@example.com",
       "cpf": "98712345644",
@@ -69,7 +69,7 @@
       }
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Erica Davis",
       "email": "erica@example.com",
       "cpf": "32165498700",
@@ -86,7 +86,7 @@
       }
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "Frank Wilson",
       "email": "frank@example.com",
       "cpf": "45678912300",
@@ -103,7 +103,7 @@
       }
     },
     {
-      "id": 7,
+      "id": "7",
       "name": "Grace Brown",
       "email": "grace@example.com",
       "cpf": "78912345622",
@@ -120,7 +120,7 @@
       }
     },
     {
-      "id": 8,
+      "id": "8",
       "name": "Henry Taylor",
       "email": "henry@example.com",
       "cpf": "85236974100",
@@ -137,7 +137,7 @@
       }
     },
     {
-      "id": 9,
+      "id": "9",
       "name": "Isabella Harris",
       "email": "isabella@example.com",
       "cpf": "78945612311",
@@ -154,7 +154,7 @@
       }
     },
     {
-      "id": 10,
+      "id": "10",
       "name": "Jack Robinson",
       "email": "jack@example.com",
       "cpf": "32178965422",
@@ -171,7 +171,7 @@
       }
     },
     {
-      "id": 11,
+      "id": "11",
       "name": "Karen Clark",
       "email": "karen@example.com",
       "cpf": "45685236933",
@@ -188,7 +188,7 @@
       }
     },
     {
-      "id": 12,
+      "id": "12",
       "name": "Leo Martinez",
       "email": "leo@example.com",
       "cpf": "98765432100",
@@ -205,7 +205,7 @@
       }
     },
     {
-      "id": 13,
+      "id": "13",
       "name": "Mia Garcia",
       "email": "mia@example.com",
       "cpf": "32198765444",
@@ -222,7 +222,7 @@
       }
     },
     {
-      "id": 14,
+      "id": "14",
       "name": "Nathan Lee",
       "email": "nathan@example.com",
       "cpf": "65432198766",
@@ -239,7 +239,7 @@
       }
     },
     {
-      "id": 15,
+      "id": "15",
       "name": "Olivia White",
       "email": "olivia@example.com",
       "cpf": "78912365400",
@@ -256,7 +256,7 @@
       }
     },
     {
-      "id": 16,
+      "id": "16",
       "name": "Peter Taylor",
       "email": "peter@example.com",
       "cpf": "45698732122",
@@ -273,7 +273,7 @@
       }
     },
     {
-      "id": 17,
+      "id": "17",
       "name": "Quinn Wilson",
       "email": "quinn@example.com",
       "cpf": "78932165488",
@@ -290,7 +290,7 @@
       }
     },
     {
-      "id": 18,
+      "id": "18",
       "name": "Rachel Martinez",
       "email": "rachel@example.com",
       "cpf": "12378945600",
@@ -307,7 +307,7 @@
       }
     },
     {
-      "id": 19,
+      "id": "19",
       "name": "Samuel Adams",
       "email": "samuel@example.com",
       "cpf": "65498732100",
@@ -324,7 +324,7 @@
       }
     },
     {
-      "id": 20,
+      "id": "20",
       "name": "Taylor Brown",
       "email": "taylor@example.com",
       "cpf": "32145698711",
@@ -366,7 +366,8 @@
       "customer_name": "João da Silva",
       "description": "Botões físicos não funcionam corretamente.",
       "tag": "botões",
-      "device": "Motorola Moto G9"
+      "device": "Motorola Moto G9",
+      "id": "19ad"
     },
     {
       "id": "1234",
@@ -383,7 +384,8 @@
       "customer_name": "Pedro Almeida",
       "description": "Câmera traseira não funciona.",
       "tag": "câmera",
-      "device": "Google Pixel 5"
+      "device": "Google Pixel 5",
+      "id": "0349"
     },
     {
       "id": "7e7b",
@@ -471,6 +473,16 @@
       "client_id": 1,
       "customer_name": "Alice Smith",
       "price": 100
+    },
+    {
+      "id": "ad49",
+      "arrived_at": "2024-02-23T00:04:09.847Z",
+      "device": "samsumg do meu irmao",
+      "description": "problema pra cacete mano. meu deus",
+      "tag": "sansumg",
+      "client_id": "2",
+      "customer_name": "Bob Johnson",
+      "price": 200
     }
   ]
 }

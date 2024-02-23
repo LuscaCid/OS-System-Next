@@ -32,8 +32,8 @@ export function HistoryAndJobContextProvider ({children} : {children : ReactNode
     setJobsHistory([...JobsHistory, newJob])
     try {
       const response = await api.post('/orders', newJob)
-      const actualJobAdicted = response.data
-      setJobsHistory(prevState => [...prevState, actualJobAdicted])
+      const actualJobAddicted = response.data
+      setJobsHistory(prevState => [actualJobAddicted, ...prevState])
     } catch (e) {
       return console.log(e)
     }

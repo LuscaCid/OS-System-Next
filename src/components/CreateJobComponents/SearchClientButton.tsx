@@ -10,11 +10,15 @@ interface PropsDrilling{
 }
 
 export function SearchClientButton ({selectedUser, handleSelectUser, handleRemoveSelectedUser} : PropsDrilling) {
+
+    const styleOfButton = `font-bold items-center flex justify-between dark:text-zinc-300  w-full bg-transparent p-3 border dark:hover:bg-zinc-800/80 border-zinc-300 dark:border-zinc-800 rounded-md hover:bg-zinc-200/50 transition duration-200 cursor-text ${selectedUser === null && "animate-pulse"}`
+    
+
     return (
         <section className='flex flex-col gap-2 mt-4'>
             <Dialog.Root>
                 <Dialog.Trigger asChild>
-                    <button type='button' className='font-bold items-center flex justify-between dark:text-zinc-300  w-full bg-transparent p-3 border dark:hover:bg-zinc-800/80 border-zinc-300 dark:border-zinc-800 rounded-md hover:bg-zinc-200/50 transition duration-200 cursor-text'>
+                    <button type='button' className={styleOfButton}>
                         Select an Client <Search strokeWidth={1.25} size={20}/>
                     </button>
                 </Dialog.Trigger>    

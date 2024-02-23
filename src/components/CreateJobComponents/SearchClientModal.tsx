@@ -27,6 +27,7 @@ export function ModalContent ({handleSelectUser} : Props) {
             if(usernameFormatted.includes(formattedQuery) && query !== '') return user
             if(user.cpf.includes(query) && query !== '')return user
         })
+        
         return filteredDataWithinQuery
     }
 
@@ -35,6 +36,7 @@ export function ModalContent ({handleSelectUser} : Props) {
     }
 
     useEffect(() =>{
+        if(!query)return
         async function load(){
             const usersArr = await fetchUser()         
             const filteredUsers = filterDataFromQuery(usersArr, query)
@@ -59,6 +61,7 @@ export function ModalContent ({handleSelectUser} : Props) {
                     placeholder='name or cpf'
                     type="text" 
                     onChange={e => setQuery(e.target.value)}
+                    value={query}
                 />
                 <section className='rounded-md border h-40 border-zinc-300 dark:border-zinc-800/80 min-h-4 flex flex-col gap-1 overflow-y-auto p-2 '>
                     {

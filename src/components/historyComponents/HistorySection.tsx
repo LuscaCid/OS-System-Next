@@ -39,7 +39,7 @@ export function HistorySection () {
                     onChange={(e) => setQuery(e.target.value)}
                 />
             </div>
-        <div className="border-t border-b border-zinc-300 dark:border-zinc-800  rounded-md m-2 flex flex-col gap-2 overflow-y-auto absolute inset-0 top-24 bottom-4 pr-2">           
+        <div className="border-t border-b border-zinc-300 dark:border-zinc-800  rounded-md m-2 flex flex-col gap-2 overflow-y-auto absolute inset-0 top-24 bottom-1 pr-1">           
             <Suspense fallback={<LoadingHistory />}>
                 <HistoryRender /> 
             </Suspense>

@@ -7,7 +7,8 @@ import { Moon, Sun } from 'lucide-react'
 export function ChangeTheme() {
     
     const [actualTheme, setActualTheme] = useState<string>('')
-    
+
+
     function handleSwitchTheme(e : MouseEvent<HTMLButtonElement>) {
         e.preventDefault()
         if(e.currentTarget.name === 'light'){
@@ -23,6 +24,14 @@ export function ChangeTheme() {
     useEffect(() => {
         let themeFromStorage = localStorage.getItem('@OS-theme')
         setActualTheme(themeFromStorage ? themeFromStorage : 'light')
+
+        const HtmlElement = document.querySelector('html')
+        if(themeFromStorage === 'dark'){
+            HtmlElement?.classList.add('dark')
+        } else if (themeFromStorage === 'light') {
+            HtmlElement?.classList.remove('dark')
+        }
+
     }, [])
 
     useEffect(() => {
