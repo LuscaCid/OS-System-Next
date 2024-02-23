@@ -43,7 +43,7 @@ export async function HistoryRender ({query} : RenderingProps) {
         }) 
         : (
           <h2 className="mx-auto font-bold text-3x1 mt-4">
-            Not job found
+            No job found
           </h2>
         )
       } 
