@@ -14,7 +14,7 @@ interface FunctionProviderProps {
 export const SidebarContext = createContext({} as SidebarContextProps)
 
 export function SideBarContextProvider ({children} : FunctionProviderProps) {
-  const [isOpen, setIsOpen] = useState<boolean>(true)
+  const [isOpen, setIsOpen] = useState<boolean>(false)
   
   function changeIsOpenValue(){
     setIsOpen(!isOpen)

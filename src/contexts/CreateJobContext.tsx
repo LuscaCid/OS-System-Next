@@ -17,7 +17,7 @@ export interface HistoryComponentProps {
 interface HistoryAndJobContextProps {
   JobsHistory : HistoryComponentProps []
   setJobsHistory : React.Dispatch<SetStateAction<HistoryComponentProps []>>
-  fetchHistory : (query? : string) => Promise<HistoryComponentProps[]>
+  fetchHistory : (query? : string) => Promise<HistoryComponentProps[] | void>
   AddAnNewJob : (newJob : HistoryComponentProps ) => Promise<void>
 }
 
@@ -34,45 +34,56 @@ export function HistoryAndJobContextProvider ({children} : {children : ReactNode
       const response = await api.post('/orders', newJob)
       const actualJobAddicted = response.data
       setJobsHistory(prevState => [actualJobAddicted, ...prevState])
-    } catch (e) {
-      return console.log(e)
+    } catch (e : any) {
+      return alert(`erro : ${e.message}`)
     }
 
   }, [setJobsHistory, JobsHistory])
 
-  const fetchHistory = useCallback(async (query? : string) : Promise<HistoryComponentProps[]> => {
+  const fetchHistory = useCallback(async (query? : string) : Promise<HistoryComponentProps[] > => {
     
-    let data : HistoryComponentProps [];
+    let data : HistoryComponentProps [] = [];
     if(query) {
-
-      const response = await api.get('/orders')     
-      data = response.data
-      
-      const filteredDataByEntry = data.filter((element) => {
-
-        const description = element.description
-        const device = element.device
-        const tag = element.tag
-
-        if(description!.includes(query)) return element
-        if(device.includes(query))return element
-        if(tag.includes(query))return element
+      try {
+        const response = await api.get('/orders')     
+        data = response.data
         
-      } )
-      return filteredDataByEntry
-      /**
-       * fazer uma especie de whereLike Fake aqui, ta? asdkask
-       */
-    } else {
+        const filteredDataByEntry = data.filter((element) => {
+  
+          const description = element.description
+          const device = element.device
+          const tag = element.tag
+  
+          if(description!.includes(query)) return element
+          if(device.includes(query))return element
+          if(tag.includes(query))return element
+          
+        } )
+        return filteredDataByEntry
+        /**
+         * fazer uma especie de whereLike Fake aqui, ta? asdkask
+         */
+      } catch (err : any) {
+        alert(err.message)
+        return data
+        
+      }
+     
+    }
+    try {
       const response = await api.get('/orders')
       data = response.data
+      return data
+    } catch(err : any) {
+      alert(err.message)
+      return data
     }
-    return data
+      
   }, []) 
   useEffect(() => {
   (async () => {
     const data = await fetchHistory()
-    setJobsHistory(data)
+    data && setJobsHistory(data)
   })
   }, [ fetchHistory])
   return (

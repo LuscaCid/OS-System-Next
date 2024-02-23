@@ -1,7 +1,9 @@
 
+import { CreateJobSection } from "@/components/CreateJobComponents/CreateJobSection";
 import { Header } from "@/components/Header";
-import { MainContent } from "@/components/MainContent";
 import { Sidebar } from "@/components/Sidebar";
+import { HistorySection } from "@/components/historyComponents/HistorySection";
+import { HistoryAndJobContextProvider } from "@/contexts/CreateJobContext";
 import { SideBarContextProvider } from "@/contexts/SidebarMenu";
 
 export default function Home() {
@@ -10,11 +12,19 @@ export default function Home() {
       <SideBarContextProvider>
         <div className="overflow-hidden flex flex-col border-b-none border h-full border-zinc-300 dark:border-zinc-800 rounded-md shadow-2xl">
           <Header/>
-          <div className="flex overflow-hidden border h-full border-zinc-300 dark:border-zinc-800 rounded-md shadow-2xl">
+          <div className="flex overflow-hidden border h-screen border-zinc-300 dark:border-zinc-800 rounded-md shadow-2xl">
             <Sidebar />
-            <MainContent />
-
-          </div>
+            
+          <main className="h-full grid grid-cols-1 md:grid-cols-2 w-full">
+              <HistoryAndJobContextProvider>
+                  <>
+                      <HistorySection />
+                      <CreateJobSection />
+                  </>
+              </HistoryAndJobContextProvider>
+              
+          </main>
+         </div>
         </div>
       </SideBarContextProvider>
       

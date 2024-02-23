@@ -16,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br" >
-      <body className="overflow-hidden h-screen p-3 text-zinc-950 bg-zinc-100 dark:bg-zinc-950 dark:text-zinc-200">{children}</body>
+      <body className="overflow-hidden h-screen p-1 text-zinc-950 bg-zinc-100 dark:bg-zinc-950 dark:text-zinc-200">{children}</body>
     </html>
   );
 }

@@ -1,9 +1,0 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-.custom-height{
-  height: 780px;
-  min-height: 500;
-}

@@ -12,7 +12,7 @@ export function Sidebar () {
 
     return (
 
-        <aside className={`fixed  rounded-md opacity-0 ease-in-out  h-full z-10 bg-zinc-200 items-start overflow-hidden p-2 transition-all duration-200 w-36 border-r border-zinc-300 dark:bg-zinc-800 dark:border-zinc-800 ${isOpen ? `translate-x-0 opacity-100` : `-translate-x-36`}`}>
+        <aside className={`fixed  rounded-md opacity-0 ease-in-out  h-full z-10 bg-zinc-200 items-start overflow-hidden p-2 transition-all duration-200 w-36 border-r border-zinc-300 dark:bg-zinc-900 dark:border-zinc-800 ${isOpen ? `translate-x-0 opacity-100` : `-translate-x-36`}`}>
             
             <div className="rounded-md border border-zinc-300 no dark:border-zinc-800 p-2 flex gap-1 hover:bg-zinc-300 dark:hover:bg-zinc-800 transition duration-200 cursor-pointer mb-2 items-center  text-nowrap overflow-x-hidden" >
                 <User  size={15}/>Lucas Cid <ChevronsUpDown size={15} />
@@ -25,8 +25,8 @@ export function Sidebar () {
                 />
                 <LiLink 
                     icon={UsersRound}
-                    source="/" 
-                    title="clients"
+                    source="/costumers" 
+                    title="costumers"
                 />
                 <LiLink 
                     source="/" 
